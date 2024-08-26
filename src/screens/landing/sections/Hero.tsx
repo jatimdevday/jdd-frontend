@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="bg-darkBg text-white pt-[96px] pb-[170px]">
       <div className="container mx-auto flex items-center">
-        <div className="w-[65%]">
+        <div className="w-[63%]">
           <Image
             quality={100}
             src="/world.png"
@@ -17,7 +17,7 @@ const Hero = () => {
               objectFit: "contain",
             }}
           />
-          <p className="font-bold text-[50px] leading-snug mt-6">
+          <p className="font-bold text-[44px] lg:text-[50px] leading-snug mt-6">
             Membangun <span className="text-primary">Ekosistem</span> IT di{" "}
             <span className="text-primary">Jawa Timur</span> Melalui{" "}
             <span className="text-primary">Komunitas.</span>
@@ -27,7 +27,7 @@ const Hero = () => {
           </p>
           <Button variant="secondary">Daftar Sekarang</Button>
         </div>
-        <div className="w-[35%]">
+        <div className="w-[37%]">
           <Image
             quality={100}
             src="/character.png"
