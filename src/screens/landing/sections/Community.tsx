@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { getCommunities } from "@/lib/firebase";
+import { Communities } from "@/lib/schema";
 
 const logos = [
   "community-logo.png",
@@ -10,7 +12,9 @@ const logos = [
   "community-logo.png",
 ];
 
-const Community = () => {
+const Community = async () => {
+  const communities = (await getCommunities()) as Communities;
+  // console.log(communities);
   return (
     <div className=" bg-white text-black pt-[96px] pb-[100px]">
       <div className="container mx-auto flex items-center">

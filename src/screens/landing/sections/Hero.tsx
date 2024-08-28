@@ -23,7 +23,7 @@ const Hero = () => {
             <span className="text-primary">Komunitas.</span>
           </p>
           <p className="text-emerald-50 text-lg mt-5 mb-4">
-            Malang 25 Oktober 2024
+            Malang - 27 Oktober 2024
           </p>
           <Button variant="secondary">Daftar Sekarang</Button>
         </div>
