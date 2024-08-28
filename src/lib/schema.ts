@@ -1,0 +1,40 @@
+export type Communities = {
+  name: string;
+  logo: string;
+}[];
+
+export type Content = {
+  about: string;
+  benefit: {
+    description: string;
+    title: string;
+  }[];
+  date: string;
+  goal: string;
+  registration_link: string;
+  registration_tagline: string;
+  tagline: string;
+};
+
+export type Galleries = string[];
+
+export type Speakers = {
+  name: string;
+  photo: string;
+  title: string;
+  twitter: string;
+  youtube: string;
+  linkedin: string;
+}[];
+
+export type ThrowbackEvent = {
+  location: string;
+  photo: string[];
+};
+
+export type Events = {
+  name: string;
+  location: string;
+  photo: string;
+  link: string;
+}[];
