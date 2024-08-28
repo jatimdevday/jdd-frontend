@@ -14,7 +14,7 @@ const logos = [
 
 const Community = async () => {
   const communities = (await getCommunities()) as Communities;
-  console.log(communities);
+  // console.log(communities);
   return (
     <div className=" bg-white text-black pt-[96px] pb-[100px]">
       <div className="container mx-auto flex items-center">
