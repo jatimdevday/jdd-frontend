@@ -2,7 +2,7 @@ name: Deploy Next.js to Firebase Hosting
 on:
   push:
     branches:
-      - main
+      - feat/setup-firebase-database-and-cicd
 jobs:
   deploy:
     runs-on: ubuntu-latest
