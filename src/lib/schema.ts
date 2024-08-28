@@ -34,6 +34,7 @@ export type ThrowbackEvent = {
 
 export type Events = {
   name: string;
+  date: string;
   location: string;
   photo: string;
   link: string;
