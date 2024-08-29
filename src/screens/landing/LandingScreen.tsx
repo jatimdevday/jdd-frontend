@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "./sections/Hero";
 import Sponsor from "./sections/Sponsor";
+import Speaker from "./sections/Speaker";
 import Event from "./sections/Event";
 import Benefit from "./sections/Benefit";
 import Cta from "./sections/Cta";
@@ -12,6 +13,7 @@ const LandingScreen = () => {
     <>
       <Hero />
       <About />
+      <Speaker />
       <Event />
       <Benefit />
       <Sponsor />
