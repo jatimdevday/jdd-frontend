@@ -1,3 +1,4 @@
+import Star from "@/assets/svgs/Star";import World from "@/assets/svgs/World";
 import Image from "next/image";
 import React from "react";
 
@@ -30,31 +31,22 @@ const benefits = [
 
 const Benefit = () => {
   return (
-    <div className="bg-[#833CFA] text-white pt-[96px] pb-[100px]">
-      <div className="container mx-auto flex flex-wrap lg:flex-nowrap items-center">
+    <div className="bg-[#833CFA] pt-[96px] pb-[100px]">
+      <div className="container mx-auto flex flex-wrap lg:flex-nowrap items-center gap-6">
         <div className="lg:w-[50%] w-full mb-10 lg:mb-0">
-          <div className="flex mb-4 justify-center lg:justify-start">
-            <Image quality={100} src="/star.png" alt="" width={20} height={0} />
-            <h3 className="ms-[10px] text-white font-semibold text-[15px] me-[10px]">
-              Benefits
-            </h3>
-            <Image quality={100} src="/star.png" alt="" width={20} height={0} />
+          <div className="flex mb-4 justify-center lg:justify-start gap-2 items-center">
+            <Star />
+            <h3 className="text-white font-semibold text-[15px]">Benefits</h3>
+            <Star />
           </div>
-          <h1 className="mb-8 font-semibold text-[40px] text-center lg:text-left">
+          <h1 className="mb-8 font-semibold text-[40px] text-center lg:text-left text-white">
             What Will You Get
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-black">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-[#CAF93A] p-3 rounded-[20px]">
-                <Image
-                  quality={100}
-                  src={benefit.icon}
-                  alt=""
-                  width={17}
-                  height={0}
-                  className="mb-1 mt-1"
-                />
-                <h5 className="font-bold mb-1">{benefit.title}</h5>
+              <div key={index} className="bg-primary p-5 rounded-[30px]">
+                <World />
+                <h5 className="font-bold mb-1 mt-2">{benefit.title}</h5>
                 <p className="text-[14px] mb-2">{benefit.description}</p>
               </div>
             ))}
