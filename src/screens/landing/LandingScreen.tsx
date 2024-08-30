@@ -11,10 +11,10 @@ const LandingScreen = () => {
   return (
     <>
       <Hero />
+      <Sponsor />
       <About />
       <Event />
       <Benefit />
-      <Sponsor />
       <Cta />
       <Community />
     </>

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import Image from "next/image";import React from "react";
+import Marquee from "react-fast-marquee";
 
 const logos = [
   "logo-ipsum.png",
@@ -11,7 +11,7 @@ const logos = [
 const Sponsor = () => {
   return (
     <div className=" bg-white text-black pt-[96px] pb-[100px]">
-      <div className="container mx-auto flex items-center">
+      <div className="mx-auto flex items-center">
         <div className="w-[100%]">
           <div className="flex mb-10 justify-center">
             <div className="flex">
@@ -19,8 +19,11 @@ const Sponsor = () => {
                 quality={100}
                 src="/black-star.png"
                 alt=""
-                width={30}
+                width={24}
                 height={0}
+                style={{
+                  objectFit: "contain",
+                }}
               />
               <h3 className="ms-[10px] font-semibold text-[20px] me-[10px]">
                 Our Sponsor
@@ -29,12 +32,15 @@ const Sponsor = () => {
                 quality={100}
                 src="/black-star.png"
                 alt=""
-                width={30}
+                width={24}
                 height={0}
+                style={{
+                  objectFit: "contain",
+                }}
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 justify-items-center">
+          <Marquee speed={120}>
             {logos.map((logo, index) => (
               <Image
                 key={index}
@@ -43,10 +49,10 @@ const Sponsor = () => {
                 alt={`Logo ${index + 1}`}
                 width={250}
                 height={100}
-                className="mb-4 sm:mb-0"
+                className="mx-12"
               />
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </div>
