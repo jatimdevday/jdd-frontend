@@ -1,4 +1,5 @@
-import Image from "next/image";import React from "react";
+import Image from "next/image";
+import React from "react";
 import Marquee from "react-fast-marquee";
 
 const logos = [
@@ -49,7 +50,7 @@ const Sponsor = () => {
                 alt={`Logo ${index + 1}`}
                 width={250}
                 height={100}
-                className="mx-12"
+                className="mx-8"
               />
             ))}
           </Marquee>
