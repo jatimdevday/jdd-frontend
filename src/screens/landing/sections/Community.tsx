@@ -5,18 +5,9 @@ import { Communities } from "@/lib/schema";
 import DarkStar from "@/assets/svgs/DarkStar";
 import Marquee from "react-fast-marquee";
 
-const logos = [
-  "community-logo.png",
-  "community-logo.png",
-  "community-logo.png",
-  "community-logo.png",
-  "community-logo.png",
-  "community-logo.png",
-];
-
 const Community = async () => {
   const communities = (await getCommunities()) as Communities;
-  console.log(communities);
+
   return (
     <div className=" bg-white text-black pt-[96px] pb-[100px]">
       <div className="mx-auto flex items-center">
@@ -32,15 +23,15 @@ const Community = async () => {
             Community
           </h1>
           <Marquee speed={150}>
-            {logos.map((logo, index) => (
+            {communities.map((item, index) => (
               <Image
                 key={index}
                 quality={100}
-                src={`/${logo}`}
-                alt={`Community ${index + 1}`}
+                src={item.logo}
+                alt={item.name}
                 width={170}
                 height={170}
-                className="mx-8"
+                className="mx-12"
               />
             ))}
           </Marquee>
