@@ -50,7 +50,7 @@ const Sponsor = () => {
                 alt={`Logo ${index + 1}`}
                 width={250}
                 height={100}
-                className="mx-8"
+                className="mx-12"
               />
             ))}
           </Marquee>
