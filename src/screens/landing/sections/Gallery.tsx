@@ -1,5 +1,4 @@
-import Star from "@/assets/svgs/Star";
-import Image from "next/image";
+import Star from "@/assets/svgs/Star";import Image from "next/image";
 import React from "react";
 
 const Gallery = () => {
@@ -15,7 +14,7 @@ const Gallery = () => {
           Kilas Balik Kenangan JDD
         </p>
         <div className="grid grid-cols-2 grid-rows-5 grid-flow-col gap-8 h-[560px]">
-          <div className="row-span-3 bg-red-300 rounded-2xl relative h-full">
+          <div className="row-span-3 bg-red-300 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
               src="/gallery.jpg"
@@ -24,7 +23,7 @@ const Gallery = () => {
               style={{ objectFit: "cover", objectPosition: "center center" }}
             />
           </div>
-          <div className="row-span-2 bg-red-300 rounded-2xl relative h-full">
+          <div className="row-span-2 bg-red-300 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
               src="/gallery.jpg"
@@ -33,7 +32,7 @@ const Gallery = () => {
               style={{ objectFit: "cover", objectPosition: "center center" }}
             />
           </div>
-          <div className="row-span-2 bg-red-300 rounded-2xl relative h-full">
+          <div className="row-span-2 bg-red-300 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
               src="/gallery.jpg"
@@ -42,7 +41,7 @@ const Gallery = () => {
               style={{ objectFit: "cover", objectPosition: "center center" }}
             />
           </div>
-          <div className="row-span-3 bg-red-300 rounded-2xl relative h-full">
+          <div className="row-span-3 bg-red-300 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
               src="/gallery.jpg"
