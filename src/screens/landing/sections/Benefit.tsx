@@ -5,25 +5,21 @@ import React from "react";
 
 const benefits = [
   {
-    icon: "/world-2.png",
     title: "Jaringan dan Kolaborasi",
     description:
       "Bertemu dengan sesama profesional IT, pemimpin komunitas, dan penggiat teknologi di Jawa Timur.",
   },
   {
-    icon: "/world-2.png",
     title: "Pengalaman Berharga",
     description:
       "Mendapatkan wawasan dan pengetahuan baru dari para ahli industri.",
   },
   {
-    icon: "/world-2.png",
     title: "Sertifikat",
     description:
       "Sertifikat keikutsertaan yang dapat digunakan untuk meningkatkan portofolio profesional Anda.",
   },
   {
-    icon: "/world-2.png",
     title: "Hadiah Menarik",
     description:
       "Kesempatan untuk memenangkan hadiah menarik selama acara berlangsung.",
