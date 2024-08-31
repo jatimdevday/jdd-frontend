@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     loader: "custom",
     loaderFile: "./src/ImageLoader.js",
+    domains: ['firebasestorage.googleapis.com'],
   },
 };
 
