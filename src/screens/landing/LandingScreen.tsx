@@ -7,16 +7,19 @@ import Benefit from "./sections/Benefit";
 import Cta from "./sections/Cta";
 import About from "./sections/About";
 import Community from "./sections/Community";
+import Gallery from "./sections/Gallery";
 
 const LandingScreen = () => {
   return (
     <>
       <Hero />
+      <Sponsor />
       <About />
       <Speaker />
+      <Gallery />
       <Event />
       <Benefit />
-      <Sponsor />
+      <Gallery />
       <Cta />
       <Community />
     </>
