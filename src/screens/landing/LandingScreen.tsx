@@ -1,4 +1,5 @@
-import React from "react";import Hero from "./sections/Hero";
+import React from "react";
+import Hero from "./sections/Hero";
 import Sponsor from "./sections/Sponsor";
 import Event from "./sections/Event";
 import Benefit from "./sections/Benefit";
@@ -13,6 +14,7 @@ const LandingScreen = () => {
       <Hero />
       <Sponsor />
       <About />
+      <Gallery />
       <Event />
       <Benefit />
       <Gallery />

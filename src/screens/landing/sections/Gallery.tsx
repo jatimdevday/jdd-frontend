@@ -14,16 +14,43 @@ const Gallery = () => {
         <p className="text-center mt-2.5 mb-14 font-semibold text-5xl">
           Kilas Balik Kenangan JDD
         </p>
-        <div className="grid grid-cols-2">
-          <Image
-            src="/gallery.jpg"
-            alt=""
-            width={400}
-            height={400}
-            style={{
-              objectFit: "cover",
-            }}
-          />
+        <div className="grid grid-cols-2 grid-rows-5 grid-flow-col gap-8">
+          <div className="row-span-3 bg-red-300 rounded-2xl">
+            <Image
+              src="/gallery.jpg"
+              alt=""
+              width={200}
+              height={200}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="row-span-2 bg-red-300 rounded-2xl">
+            <Image
+              src="/gallery.jpg"
+              alt=""
+              width={200}
+              height={200}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="row-span-2 bg-red-300 rounded-2xl">
+            <Image
+              src="/gallery.jpg"
+              alt=""
+              width={200}
+              height={200}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="row-span-3 bg-red-300 rounded-2xl">
+            <Image
+              src="/gallery.jpg"
+              alt=""
+              width={200}
+              height={200}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
       </div>
     </div>
