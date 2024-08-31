@@ -1,4 +1,5 @@
-import Star from "@/assets/svgs/Star";import World from "@/assets/svgs/World";
+import Star from "@/assets/svgs/Star";
+import World from "@/assets/svgs/World";
 import Image from "next/image";
 import React from "react";
 
@@ -31,35 +32,40 @@ const benefits = [
 
 const Benefit = () => {
   return (
-    <div className="bg-[#833CFA] pt-[96px] pb-[100px]">
-      <div className="container mx-auto flex flex-wrap lg:flex-nowrap items-center gap-6">
-        <div className="lg:w-[50%] w-full mb-10 lg:mb-0">
-          <div className="flex mb-4 justify-center lg:justify-start gap-2 items-center">
+    <div className="bg-secondary py-20 text-white">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-9 items-center">
+        <div>
+          <div className="flex mb-3 justify-center lg:justify-start gap-2 items-center">
             <Star />
-            <h3 className="text-white font-semibold text-[15px]">Benefits</h3>
+            <p className="font-semibold">Benefits</p>
             <Star />
           </div>
-          <h1 className="mb-8 font-semibold text-[40px] text-center lg:text-left text-white">
+          <p className="mb-8 font-semibold text-5xl text-center lg:text-left text-white">
             What Will You Get
-          </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-blackText">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-primary p-5 rounded-[30px]">
                 <World />
-                <h5 className="font-bold mb-1 mt-2">{benefit.title}</h5>
-                <p className="text-[14px] mb-2">{benefit.description}</p>
+                <p className="font-semibold mt-2 mb-1 text-lg">
+                  {benefit.title}
+                </p>
+                <p className="text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="lg:w-[50%] w-full flex justify-center lg:justify-end">
+        <div className="relative lg:h-full h-[500px] rounded-3xl overflow-hidden">
           <Image
             quality={100}
-            src="/rectangle.png"
+            src="https://res.cloudinary.com/zeit-inc/image/upload/nextconf-photos/2022_Z39.jpg"
             alt=""
-            width={460}
-            height={200}
-            className="mb-1 mt-1"
+            fill
+            placeholder="blur"
+            blurDataURL="#"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </div>
       </div>

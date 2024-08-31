@@ -1,4 +1,5 @@
-import Image from "next/image";import React from "react";
+import Image from "next/image";
+import React from "react";
 import { getCommunities } from "@/lib/firebase";
 import { Communities } from "@/lib/schema";
 import DarkStar from "@/assets/svgs/DarkStar";
@@ -8,34 +9,26 @@ const Community = async () => {
   const communities = (await getCommunities()) as Communities;
 
   return (
-    <div className=" bg-white text-black pt-[96px] pb-[100px]">
-      <div className="mx-auto flex items-center">
-        <div className="w-[100%]">
-          <div className="flex mb-3 justify-center">
-            <div className="flex items-center gap-3">
-              <DarkStar />
-              <h3 className="font-semibold text-[15px]">Thank&apos;s to</h3>
-              <DarkStar />
-            </div>
-          </div>
-          <h1 className="text-center ms-[10px] mb-10 font-semibold text-[47px] me-[10px]">
-            Community
-          </h1>
-          <Marquee speed={150}>
-            {communities.map((item, index) => (
-              <Image
-                key={index}
-                quality={100}
-                src={item.logo}
-                alt={item.name}
-                width={120}
-                height={120}
-                className="mx-8"
-              />
-            ))}
-          </Marquee>
-        </div>
+    <div className=" bg-white py-14">
+      <div className="flex items-center gap-3 justify-center">
+        <DarkStar />
+        <p className="font-semibold">Thank&apos;s to</p>
+        <DarkStar />
       </div>
+      <p className="text-center mb-12 font-semibold text-5xl mt-4">Community</p>
+      <Marquee speed={150}>
+        {communities.map((item, index) => (
+          <Image
+            key={index}
+            quality={100}
+            src={item.logo}
+            alt={item.name}
+            width={120}
+            height={120}
+            className="mx-8"
+          />
+        ))}
+      </Marquee>
     </div>
   );
 };

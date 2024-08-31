@@ -21,3 +21,9 @@
     text-wrap: balance;
   }
 }
+
+@layer base {
+  html {
+    @apply text-blackText;
+  }
+}

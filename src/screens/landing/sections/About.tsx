@@ -8,7 +8,7 @@ const Info = ({ title, children }: { title: string; children: ReactNode }) => (
       <p className="font-semibold">{title}</p>
       <Star />
     </div>
-    <h6 className="font-semibold text-[20px] lg:text-[28px]">{children}</h6>
+    <h6 className="font-semibold text-lg leading-relaxed">{children}</h6>
   </div>
 );
 
