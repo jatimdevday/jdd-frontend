@@ -1,5 +1,4 @@
-import Image from "next/image";
-import React from "react";
+import Image from "next/image";import React from "react";
 import { getCommunities } from "@/lib/firebase";
 import { Communities } from "@/lib/schema";
 import DarkStar from "@/assets/svgs/DarkStar";
@@ -29,9 +28,9 @@ const Community = async () => {
                 quality={100}
                 src={item.logo}
                 alt={item.name}
-                width={170}
-                height={170}
-                className="mx-12"
+                width={120}
+                height={120}
+                className="mx-8"
               />
             ))}
           </Marquee>
