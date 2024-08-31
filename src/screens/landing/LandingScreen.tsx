@@ -6,6 +6,7 @@ import Benefit from "./sections/Benefit";
 import Cta from "./sections/Cta";
 import About from "./sections/About";
 import Community from "./sections/Community";
+import Gallery from "./sections/Gallery";
 
 const LandingScreen = () => {
   return (
@@ -13,8 +14,10 @@ const LandingScreen = () => {
       <Hero />
       <Sponsor />
       <About />
+      <Gallery />
       <Event />
       <Benefit />
+      <Gallery />
       <Cta />
       <Community />
     </>
