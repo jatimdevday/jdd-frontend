@@ -97,7 +97,7 @@ const Agenda = () => {
         <div>
           <p className="mt-5 text-center col-span-full text-2xl font-bold">Jatim Developer Day 2024 ✨</p>
 
-          <p className="mt-4 text-center col-span-full text-base font-bold">We're back</p>
+          <p className="mt-4 text-center col-span-full text-base font-bold">We&apos;re back</p>
         </div>
       </div>
     </div>
