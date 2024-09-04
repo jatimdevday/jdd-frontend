@@ -8,6 +8,7 @@ import About from "./sections/About";
 import Community from "./sections/Community";
 import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
+import Agenda from "./sections/Agenda";
 
 const LandingScreen = () => {
   return (
@@ -15,7 +16,7 @@ const LandingScreen = () => {
       <Hero />
       <Sponsor />
       <About />
-      <Gallery />
+      <Agenda />
       <Speaker />
       <Event />
       <Benefit />
