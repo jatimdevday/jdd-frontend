@@ -13,11 +13,12 @@ const Agenda = () => {
         </div>
 
         <div className="grid grid-cols-[1fr_10px_1fr] grid-rows-[auto_1fr] gap-5">
-          <p className="mt-20 text-center col-span-full text-2xl font-bold">Jatim Developer Day 2019</p>
+          <p className="mt-20 text-center col-span-full text-2xl font-bold">
+            Jatim Developer Day 2019
+          </p>
 
-          {/* TODO: is this scrollbar? or just a line? */}
-          <div className="col-start-2 row-span-2 w-[10px] bg-[#1a1a4a] relative cursor-pointer">
-            <div className="w-full h-1/2 bg-[#8a4fff] absolute rounded-[5px]"></div>
+          <div className="col-start-2 row-span-2 relative">
+            <div className="w-[10px] h-full bg-[#8a4fff] absolute rounded-[5px]"></div>
           </div>
 
           <div className="">
@@ -54,7 +55,9 @@ const Agenda = () => {
         </div>
 
         <div className="grid grid-cols-[1fr_10px_1fr] grid-rows-[auto_1fr] gap-5">
-          <p className="mt-5 text-center col-span-full text-2xl font-bold">Jatim Developer Day 2020</p>
+          <p className="mt-5 text-center col-span-full text-2xl font-bold">
+            Jatim Developer Day 2020
+          </p>
 
           <div className="grid justify-items-end">
             <div>Online</div>
@@ -88,16 +91,19 @@ const Agenda = () => {
             </div>
           </div>
 
-          {/* TODO: is this scrollbar? or just a line? */}
-          <div className="col-start-2 row-span-2 w-[10px] bg-[#1a1a4a] relative cursor-pointer">
-            <div className="w-full h-1/2 bg-[#8a4fff] absolute rounded-[5px]"></div>
+          <div className="col-start-2 row-span-2 relative">
+            <div className="w-[10px] h-full bg-[#8a4fff] absolute rounded-[5px]"></div>
           </div>
         </div>
 
         <div>
-          <p className="mt-5 text-center col-span-full text-2xl font-bold">Jatim Developer Day 2024 ✨</p>
+          <p className="mt-5 text-center col-span-full text-2xl font-bold">
+            Jatim Developer Day 2024 ✨
+          </p>
 
-          <p className="mt-4 text-center col-span-full text-base font-bold">We&apos;re back</p>
+          <p className="mt-4 text-center col-span-full text-base font-bold">
+            We&apos;re back
+          </p>
         </div>
       </div>
     </div>
