@@ -1,8 +1,7 @@
 import Star from "@/assets/svgs/Star";
 import Image from "next/image";
-import React from "react";
 
-const Gallery = () => {
+const Gallery = async () => {
   return (
     <div className="bg-darkBg text-white py-24">
       <div className="container mx-auto">
@@ -20,7 +19,7 @@ const Gallery = () => {
               placeholder="blur"
               blurDataURL="#"
               quality={100}
-              src="https://res.cloudinary.com/zeit-inc/image/upload/nextconf-photos/Sexton_Vercel_3010.jpg"
+              src="/world.png"
               alt=""
               fill
               style={{ objectFit: "cover", objectPosition: "center center" }}
@@ -29,7 +28,7 @@ const Gallery = () => {
           <div className="sm:row-span-2 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
-              src="https://res.cloudinary.com/zeit-inc/image/upload/nextconf-photos/Sexton_Vercel_3003.jpg"
+              src="/world.png"
               alt=""
               fill
               style={{ objectFit: "cover", objectPosition: "center center" }}
@@ -38,7 +37,7 @@ const Gallery = () => {
           <div className="sm:row-span-2 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
-              src="https://res.cloudinary.com/zeit-inc/image/upload/nextconf-photos/Sexton_Vercel_3002.jpg"
+              src="/world.png"
               alt=""
               fill
               style={{ objectFit: "cover", objectPosition: "center center" }}
@@ -47,7 +46,7 @@ const Gallery = () => {
           <div className="sm:row-span-3 rounded-2xl relative h-full overflow-hidden">
             <Image
               quality={100}
-              src="https://res.cloudinary.com/zeit-inc/image/upload/nextconf-photos/Sexton_Vercel_2991.jpg"
+              src="/world.png"
               alt=""
               fill
               style={{ objectFit: "cover", objectPosition: "center center" }}

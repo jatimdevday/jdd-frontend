@@ -9,15 +9,19 @@ import Community from "./sections/Community";
 import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
 import Agenda from "./sections/Agenda";
+import { getSpeakers } from "@/lib/firebase";
+import { Speakers } from "@/lib/schema";
 
-const LandingScreen = () => {
+const LandingScreen = async () => {
+  const speakers = (await getSpeakers()) as Speakers;
+
   return (
     <>
       <Hero />
       <Sponsor />
       <About />
       <Agenda />
-      <Speaker />
+      <Speaker data={speakers} />
       <Event />
       <Benefit />
       <Gallery />

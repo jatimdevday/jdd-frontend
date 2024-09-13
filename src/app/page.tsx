@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import LandingScreen from "@/screens/landing/LandingScreen";
 
-const Page = () => {
+const Page = async () => {
   return (
     <Layout>
       <LandingScreen />

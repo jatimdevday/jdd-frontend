@@ -54,7 +54,7 @@ const Benefit = () => {
         <div className="relative lg:h-full h-[500px] rounded-3xl overflow-hidden">
           <Image
             quality={100}
-            src="https://res.cloudinary.com/zeit-inc/image/upload/nextconf-photos/2022_Z39.jpg"
+            src="/world.png"
             alt=""
             fill
             placeholder="blur"

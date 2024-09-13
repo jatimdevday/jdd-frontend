@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import DarkStar from "@/assets/svgs/DarkStar";
 import Arrow from "@/assets/svgs/Arrow";
+import DarkStar from "@/assets/svgs/DarkStar";
+import { Speakers } from "@/lib/schema";
 
 const WrapperLink = ({
   label,
@@ -22,7 +23,7 @@ const WrapperLink = ({
   </div>
 );
 
-const Speaker = () => {
+const Speaker = ({ data }: { data: Speakers }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
