@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Arrow from "@/assets/svgs/Arrow";
 import DarkStar from "@/assets/svgs/DarkStar";
@@ -23,40 +23,41 @@ const WrapperLink = ({
   </div>
 );
 
-const Speaker = ({ data }: { data: Speakers }) => {
+const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  console.log(speakers);
 
-  const images = [
-    {
-      src: "/speaker-example.png",
-      alt: "Speaker Example",
-    },
-    // TODO: just for testing image transition, remove later and add more images
-    {
-      src: "/character-angry.png",
-      alt: "Character Angry",
-    },
-  ];
+  useEffect(() => {
+    if (speakers.length === 0) {
+      console.warn("No speakers data provided to the Speaker component.");
+    }
+  }, [speakers]);
+
+  if (speakers.length === 0) {
+    return <div>No speakers available.</div>;
+  }
+
+  const currentSpeaker = speakers[currentIndex];
 
   const goToPrevious = () => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        prevIndex === 0 ? speakers.length - 1 : prevIndex - 1
       );
       setIsTransitioning(false);
-    }, 200); // Half of the transition duration
+    }, 200);
   };
 
   const goToNext = () => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        prevIndex === speakers.length - 1 ? 0 : prevIndex + 1
       );
       setIsTransitioning(false);
-    }, 200); // Half of the transition duration
+    }, 200);
   };
 
   return (
@@ -66,8 +67,8 @@ const Speaker = ({ data }: { data: Speakers }) => {
         <div>
           <Image
             quality={100}
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
+            src={currentSpeaker.photo}
+            alt={`${currentSpeaker.name} photo`}
             width={583}
             height={657}
             style={{
@@ -96,7 +97,10 @@ const Speaker = ({ data }: { data: Speakers }) => {
             <p className="font-semibold text-lg">Meet Our Speakers</p>
             <DarkStar />
           </div>
-          <p className="text-5xl font-semibold mb-6">Amirul Ihsan</p>
+          <p className="text-5xl font-semibold mb-6">{currentSpeaker.name}</p>
+          <p className="text-xl font-semibold leading-relaxed mb-4">
+            {currentSpeaker.title}
+          </p>
           <p className="text-xl font-semibold leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Lectus orci in adipiscing
             metus tellus faucibus id odio interdum. Bibendum aliquam et
@@ -110,11 +114,21 @@ const Speaker = ({ data }: { data: Speakers }) => {
           <hr className="border-blackText my-14" />
 
           <div className="flex items-center gap-4">
-            <WrapperLink label="LinkedIn" link="#" />
-            <div>|</div>
-            <WrapperLink label="Youtube" link="#" />
-            <div>|</div>
-            <WrapperLink label="Instagram" link="#" />
+            {currentSpeaker.linkedin && (
+              <WrapperLink label="LinkedIn" link={currentSpeaker.linkedin} />
+            )}
+            {currentSpeaker.youtube && (
+              <>
+                <div>|</div>
+                <WrapperLink label="Youtube" link={currentSpeaker.youtube} />
+              </>
+            )}
+            {currentSpeaker.twitter && (
+              <>
+                <div>|</div>
+                <WrapperLink label="Twitter" link={currentSpeaker.twitter} />
+              </>
+            )}
           </div>
         </div>
       </div>

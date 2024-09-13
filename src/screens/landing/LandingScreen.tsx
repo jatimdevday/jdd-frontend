@@ -21,7 +21,7 @@ const LandingScreen = async () => {
       <Sponsor />
       <About />
       <Agenda />
-      <Speaker data={speakers} />
+      <Speaker speakers={speakers} />
       <Event />
       <Benefit />
       <Gallery />
