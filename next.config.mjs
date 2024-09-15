@@ -3,14 +3,7 @@ const nextConfig = {
   output: "export",
   distDir: "out",
   images: {
-    // loader: "custom",
-    // loaderFile: "./src/ImageLoader.js",
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-      },
-    ],
+    unoptimized: true,
   },
 };
 

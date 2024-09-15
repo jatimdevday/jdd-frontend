@@ -1,8 +1,9 @@
 import { Button } from "@/components/Button";
 import Image from "next/image";
 import React from "react";
+import { Content } from "@/lib/schema";
 
-const Hero = () => {
+const Hero = ({ content }: { content?: Content }) => {
   return (
     <div className="bg-darkBg text-white pt-[96px] pb-[170px]">
       <div className="container mx-auto flex items-center">
@@ -22,10 +23,10 @@ const Hero = () => {
             <span className="text-primary">Jawa Timur</span> Melalui{" "}
             <span className="text-primary">Komunitas.</span>
           </p>
-          <p className="text-emerald-50 text-lg mt-5 mb-4">
-            Malang - 27 Oktober 2024
-          </p>
-          <Button variant="secondary">Daftar Sekarang</Button>
+          <p className="text-emerald-50 text-lg mt-5 mb-4">{content?.date}</p>
+          <a href={content?.registration_link}>
+            <Button variant="secondary">Daftar Sekarang</Button>
+          </a>
         </div>
         <div className="w-[37%]">
           <Image
