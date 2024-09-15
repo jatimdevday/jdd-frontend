@@ -87,7 +87,7 @@ const Header = () => {
             {links.map((item, idx) => (
               <li
                 key={idx}
-                className="text-white font-medium text-2xl hover:text-gray-300 transition-colors"
+                className="text-white font-medium text-xl hover:text-gray-300 transition-colors"
                 onClick={() => handleLinkClick(item.key)}
               >
                 {item.label}
