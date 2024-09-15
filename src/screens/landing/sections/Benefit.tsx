@@ -1,32 +1,11 @@
 import Star from "@/assets/svgs/Star";
 import World from "@/assets/svgs/World";
+import { Content } from "@/lib/schema";
 import Image from "next/image";
 import React from "react";
 
-const benefits = [
-  {
-    title: "Jaringan dan Kolaborasi",
-    description:
-      "Bertemu dengan sesama profesional IT, pemimpin komunitas, dan penggiat teknologi di Jawa Timur.",
-  },
-  {
-    title: "Pengalaman Berharga",
-    description:
-      "Mendapatkan wawasan dan pengetahuan baru dari para ahli industri.",
-  },
-  {
-    title: "Sertifikat",
-    description:
-      "Sertifikat keikutsertaan yang dapat digunakan untuk meningkatkan portofolio profesional Anda.",
-  },
-  {
-    title: "Hadiah Menarik",
-    description:
-      "Kesempatan untuk memenangkan hadiah menarik selama acara berlangsung.",
-  },
-];
-
-const Benefit = () => {
+const Benefit = ({ content }: { content?: Content }) => {
+  const benefits = content?.benefit;
   return (
     <div className="bg-secondary py-20 text-white">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-9 items-center">
@@ -40,7 +19,7 @@ const Benefit = () => {
             What Will You Get
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-blackText">
-            {benefits.map((benefit, index) => (
+            {benefits?.map((benefit, index) => (
               <div key={index} className="bg-primary p-5 rounded-[30px]">
                 <World />
                 <p className="font-semibold mt-2 mb-1 text-lg">

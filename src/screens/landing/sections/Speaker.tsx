@@ -26,7 +26,6 @@ const WrapperLink = ({
 const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  console.log(speakers);
 
   useEffect(() => {
     if (speakers.length === 0) {

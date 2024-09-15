@@ -9,23 +9,24 @@ import Community from "./sections/Community";
 import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
 import Agenda from "./sections/Agenda";
-import { getSpeakers } from "@/lib/firebase";
-import { Speakers } from "@/lib/schema";
+import { getContent, getSpeakers } from "@/lib/firebase";
+import { Content, Speakers } from "@/lib/schema";
 
 const LandingScreen = async () => {
   const speakers = (await getSpeakers()) as Speakers;
+  const content = (await getContent()) as Content;
 
   return (
     <>
-      <Hero />
+      <Hero content={content} />
       <Sponsor />
-      <About />
+      <About content={content} />
       <Agenda />
       <Speaker speakers={speakers} />
       <Event />
-      <Benefit />
+      <Benefit content={content} />
       <Gallery />
-      <Cta />
+      <Cta content={content} />
       <Community />
     </>
   );
