@@ -60,22 +60,27 @@ const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
   };
 
   return (
-    <div className="bg-primary py-[120px]">
-      <div className="grid grid-cols-2 container mx-auto py-10 items-center justify-between gap-[100px]">
+    <div className="bg-primary py-16 md:py-24" id="speakers">
+      <div className="grid md:grid-cols-2 container mx-auto py-10 items-center justify-between gap-[100px]">
         {/* left side */}
         <div>
-          <Image
-            quality={100}
-            src={currentSpeaker.photo}
-            alt={`${currentSpeaker.name} photo`}
-            width={583}
-            height={657}
+          <div
+            className="relative w-full h-[400px] md:h-[600px] rounded-xl"
             style={{
-              position: "relative",
               opacity: isTransitioning ? 0 : 1,
               transition: "opacity 0.4s ease-in-out",
             }}
-          />
+          >
+            <Image
+              quality={100}
+              src={currentSpeaker.photo}
+              alt={`${currentSpeaker.name} photo`}
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
 
           <div className="flex items-center justify-end gap-4 mt-8">
             <Arrow
@@ -96,7 +101,9 @@ const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
             <p className="font-semibold text-lg">Meet Our Speakers</p>
             <DarkStar />
           </div>
-          <p className="text-5xl font-semibold mb-6">{currentSpeaker.name}</p>
+          <p className="text-4xl md:text-5xl font-semibold mb-6">
+            {currentSpeaker.name}
+          </p>
           <p className="text-xl font-semibold leading-relaxed mb-4">
             {currentSpeaker.title}
           </p>

@@ -1,4 +1,5 @@
-import Image from "next/image";import React from "react";
+import Image from "next/image";
+import React from "react";
 import Marquee from "react-fast-marquee";
 
 const logos = [
@@ -10,7 +11,7 @@ const logos = [
 
 const Sponsor = () => {
   return (
-    <div className=" bg-white py-[70px]">
+    <div className="bg-white py-[70px]" id="sponsor">
       <div className="flex mb-10 justify-center items-center gap-3">
         <Image
           quality={100}

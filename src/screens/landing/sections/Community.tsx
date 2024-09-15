@@ -9,13 +9,15 @@ const Community = async () => {
   const communities = (await getCommunities()) as Communities;
 
   return (
-    <div className=" bg-white py-14">
+    <div className="py-16 md:py-24">
       <div className="flex items-center gap-3 justify-center">
         <DarkStar />
         <p className="font-semibold">Thank&apos;s to</p>
         <DarkStar />
       </div>
-      <p className="text-center mb-12 font-semibold text-5xl mt-4">Community</p>
+      <p className="text-center mb-12 font-semibold text-4xl md:text-5xl mt-4">
+        Community
+      </p>
       <Marquee speed={150}>
         {communities.map((item, index) => (
           <Image

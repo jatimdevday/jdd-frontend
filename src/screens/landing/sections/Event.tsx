@@ -20,13 +20,15 @@ const events = [
 
 const Event = () => {
   return (
-    <div className="container mx-auto py-24">
+    <div className="container mx-auto py-16 md:py-24">
       <div className="flex items-center mb-3 justify-center gap-3">
         <DarkStar />
         <p className="font-semibold">Coming Soon</p>
         <DarkStar />
       </div>
-      <p className="text-center mb-12 font-semibold text-5xl">Upcoming Event</p>
+      <p className="text-center mb-12 font-semibold text-4xl md:text-5xl">
+        Upcoming Event
+      </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {events.map((event, index) => (
           <div

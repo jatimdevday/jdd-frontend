@@ -15,7 +15,7 @@ const Benefit = ({ content }: { content?: Content }) => {
             <p className="font-semibold">Benefits</p>
             <Star />
           </div>
-          <p className="mb-8 font-semibold text-5xl text-center lg:text-left text-white">
+          <p className="mb-8 font-semibold text-4xl md:text-5xl text-center lg:text-left text-white">
             What Will You Get
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-blackText">

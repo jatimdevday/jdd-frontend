@@ -5,9 +5,9 @@ import { Content } from "@/lib/schema";
 
 const Hero = ({ content }: { content?: Content }) => {
   return (
-    <div className="bg-darkBg text-white pt-[96px] pb-[170px]">
-      <div className="container mx-auto flex items-center">
-        <div className="w-[63%]">
+    <div className="bg-darkBg text-white py-16 md:py-24">
+      <div className="container mx-auto flex gap-12 md:items-center md:flex-row flex-col">
+        <div className="md:w-[63%]">
           <Image
             quality={100}
             src="/world.png"
@@ -18,7 +18,7 @@ const Hero = ({ content }: { content?: Content }) => {
               objectFit: "contain",
             }}
           />
-          <p className="font-bold text-[44px] lg:text-[50px] leading-snug mt-6">
+          <p className="font-bold text-[38px] md:text-[44px] lg:text-[50px] leading-snug mt-6">
             Membangun <span className="text-primary">Ekosistem</span> IT di{" "}
             <span className="text-primary">Jawa Timur</span> Melalui{" "}
             <span className="text-primary">Komunitas.</span>
@@ -28,7 +28,7 @@ const Hero = ({ content }: { content?: Content }) => {
             <Button variant="secondary">Daftar Sekarang</Button>
           </a>
         </div>
-        <div className="w-[37%]">
+        <div className="md:w-[37%]">
           <Image
             quality={100}
             src="/character.png"

@@ -20,7 +20,7 @@ const Agenda = async () => {
   ];
 
   return (
-    <div className="bg-darkBg text-white pt-[96px] pb-[170px]">
+    <div className="bg-darkBg text-white py-16 md:py-24" id="kilas">
       <div className="container mx-auto">
         <div className="flex items-center gap-3 justify-center">
           <Star />

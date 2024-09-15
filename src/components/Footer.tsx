@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-darkBg">
-      <div className="container mx-auto text-white py-12 flex gap-16 items-center">
+      <div className="container mx-auto text-white py-12 flex gap-16 items-center flex-col md:flex-row">
         <Image
           alt=""
           src="/jdd-text-img.png"

@@ -15,7 +15,7 @@ const Info = ({ title, children }: { title: string; children: ReactNode }) => (
 
 const About = ({ content }: { content?: Content }) => {
   return (
-    <div className="bg-secondary text-white py-24">
+    <div className="bg-secondary text-white py-16 md:py-24" id="about">
       <div className="container mx-auto space-y-8">
         <Info title="Tentang Acara">{content?.about}</Info>
         <Info title="Goal">{content?.goal}</Info>
