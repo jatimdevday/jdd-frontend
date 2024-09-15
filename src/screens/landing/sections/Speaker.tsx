@@ -61,25 +61,27 @@ const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
 
   return (
     <div className="bg-primary py-16 md:py-24" id="speakers">
-      <div className="grid md:grid-cols-2 container mx-auto py-10 items-center justify-between gap-[100px]">
+      <div className="grid md:grid-cols-2 container mx-auto py-10 items-center justify-between gap-[20px] md:gap-[60px]">
         {/* left side */}
         <div>
-          <div
-            className="relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden"
-            style={{
-              opacity: isTransitioning ? 0 : 1,
-              transition: "opacity 0.4s ease-in-out",
-            }}
-          >
-            <Image
-              quality={100}
-              src={currentSpeaker.photo}
-              alt={`${currentSpeaker.name} photo`}
-              fill
+          <div className="flex justify-center">
+            <div
+              className="relative max-w-[400px] md:max-w-[100%] w-full md:w-full h-[300px] md:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden"
               style={{
-                objectFit: "cover",
+                opacity: isTransitioning ? 0 : 1,
+                transition: "opacity 0.4s ease-in-out",
               }}
-            />
+            >
+              <Image
+                quality={100}
+                src={currentSpeaker.photo}
+                alt={`${currentSpeaker.name} photo`}
+                fill
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </div>
           </div>
 
           <div className="flex items-center justify-end gap-4 mt-8">
@@ -96,18 +98,18 @@ const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
 
         {/* right side */}
         <div>
-          <div className="flex mb-10 items-center gap-3">
+          <div className="flex mb-6 md:mb-10 items-center gap-3">
             <DarkStar />
-            <p className="font-semibold text-lg">Meet Our Speakers</p>
+            <p className="font-semibold md:text-lg">Meet Our Speakers</p>
             <DarkStar />
           </div>
-          <p className="text-4xl md:text-5xl font-semibold mb-6">
+          <p className="text-3xl lg:text-5xl font-semibold">
             {currentSpeaker.name}
           </p>
-          <p className="text-xl font-semibold leading-relaxed mb-4">
+          <p className="md:text-lg leading-relaxed mb-4 mt-2 font-medium opacity-60">
             {currentSpeaker.title}
           </p>
-          <p className="text-xl font-semibold leading-relaxed">
+          <p className="md:text-xl font-medium leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Lectus orci in adipiscing
             metus tellus faucibus id odio interdum. Bibendum aliquam et
             imperdiet enim. Fermentum est nullam ac odio integer. Ullamcorper
@@ -117,7 +119,7 @@ const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
             Risus.
           </p>
 
-          <hr className="border-blackText my-14" />
+          <hr className="border-blackText/40 my-10 lg:my-14" />
 
           <div className="flex items-center gap-4">
             {currentSpeaker.linkedin && (

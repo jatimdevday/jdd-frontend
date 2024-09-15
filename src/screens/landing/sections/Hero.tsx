@@ -6,7 +6,10 @@ import Link from "next/link";
 
 const Wrapper = ({ total, label }: { total: string; label: string }) => (
   <p>
-    <span className="text-primary text-[32px] font-bold">{total}</span> {label}
+    <span className="text-primary text-3xl md:text-[32px] font-bold">
+      {total}
+    </span>{" "}
+    {label}
   </p>
 );
 
@@ -41,13 +44,13 @@ const Hero = ({ content }: { content?: Content }) => {
               Jadi Sponsorship
             </Link>
           </div>
-          <div className="flex gap-0 lg:gap-4 mt-12 flex-col lg:flex-row">
+          <div className="flex gap-2 sm:gap-4 mt-12 flex-col sm:flex-row">
             <Wrapper label="Participants" total="500+" />
             <Wrapper label="Speakers" total="12" />
             <Wrapper label="Communities" total="30+" />
           </div>
         </div>
-        <div className="md:w-[37%]">
+        <div className="md:w-[37%] hidden md:block">
           <Image
             quality={100}
             src="/character.png"

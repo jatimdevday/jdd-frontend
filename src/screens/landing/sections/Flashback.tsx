@@ -29,13 +29,13 @@ const Flashback = async () => {
           <Star />
         </div>
 
-        <div className="space-y-8 mt-16">
+        <div className="space-y-8 mt-12 md:mt-16">
           {list.map((item, aIdx) => (
             <div
               className="grid grid-cols-[1fr_10px_1fr] grid-rows-[auto_1fr] gap-5"
               key={aIdx}
             >
-              <p className="text-center col-span-full text-2xl font-bold">
+              <p className="text-center col-span-full text-xl md:text-2xl font-bold">
                 Jatim Developer Day {item.year}
               </p>
 
