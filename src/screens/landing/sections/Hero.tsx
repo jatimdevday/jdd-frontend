@@ -2,6 +2,13 @@ import { Button } from "@/components/Button";
 import Image from "next/image";
 import React from "react";
 import { Content } from "@/lib/schema";
+import Link from "next/link";
+
+const Wrapper = ({ total, label }: { total: string; label: string }) => (
+  <p>
+    <span className="text-primary text-[32px] font-bold">{total}</span> {label}
+  </p>
+);
 
 const Hero = ({ content }: { content?: Content }) => {
   return (
@@ -23,10 +30,22 @@ const Hero = ({ content }: { content?: Content }) => {
             <span className="text-primary">Jawa Timur</span> Melalui{" "}
             <span className="text-primary">Komunitas.</span>
           </p>
-          <p className="text-emerald-50 text-lg mt-5 mb-4">{content?.date}</p>
-          <a href={content?.registration_link}>
-            <Button variant="secondary">Daftar Sekarang</Button>
-          </a>
+          <p className="text-emerald-50 text-lg mt-6 mb-8 font-medium">
+            {content?.date}
+          </p>
+          <div className="flex gap-6 items-center">
+            <Link href={content?.registration_link || "#"}>
+              <Button variant="secondary">Daftar Sekarang</Button>
+            </Link>
+            <Link href="#" className="font-jost font-medium md:text-lg">
+              Jadi Sponsorship
+            </Link>
+          </div>
+          <div className="flex gap-0 lg:gap-4 mt-12 flex-col lg:flex-row">
+            <Wrapper label="Participants" total="500+" />
+            <Wrapper label="Speakers" total="12" />
+            <Wrapper label="Communities" total="30+" />
+          </div>
         </div>
         <div className="md:w-[37%]">
           <Image

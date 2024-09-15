@@ -39,7 +39,9 @@ const Header = () => {
 
   return (
     <div
-      className={`bg-darkBg ${isMenuOpen ? "h-screen overflow-hidden" : ""}`}
+      className={`bg-darkBg border-b border-b-slate-900 md:border-b-0 ${
+        isMenuOpen ? "h-screen overflow-hidden" : ""
+      }`}
     >
       <div className="container mx-auto py-3 md:py-5">
         <div className="flex justify-between items-center">

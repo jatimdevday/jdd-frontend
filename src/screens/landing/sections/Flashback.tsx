@@ -3,12 +3,13 @@ import Image from "next/image";
 import Star from "@/assets/svgs/Star";
 import { getThrowbackEvent } from "@/lib/firebase";
 import { ThrowbackEvent } from "@/lib/schema";
+import ArrowDown from "@/assets/svgs/ArrowDown";
 
-const Agenda = async () => {
+const Flashback = async () => {
   const event2019 = (await getThrowbackEvent(2019)) as ThrowbackEvent;
   const event2020 = (await getThrowbackEvent(2020)) as ThrowbackEvent;
 
-  const agenda = [
+  const list = [
     {
       year: 2019,
       ...event2019,
@@ -29,7 +30,7 @@ const Agenda = async () => {
         </div>
 
         <div className="space-y-8 mt-16">
-          {agenda.map((item, aIdx) => (
+          {list.map((item, aIdx) => (
             <div
               className="grid grid-cols-[1fr_10px_1fr] grid-rows-[auto_1fr] gap-5"
               key={aIdx}
@@ -73,14 +74,15 @@ const Agenda = async () => {
             </div>
           ))}
 
-          <div>
+          <div className="flex flex-col items-center">
             <p className="text-center col-span-full text-2xl font-bold">
               Jatim Developer Day 2024 ✨
             </p>
 
-            <p className="mt-4 text-center col-span-full text-base font-bold">
+            <p className="mt-4 mb-2 text-center col-span-full text-base font-bold">
               We&apos;re back
             </p>
+            <ArrowDown />
           </div>
         </div>
       </div>
@@ -88,4 +90,4 @@ const Agenda = async () => {
   );
 };
 
-export default Agenda;
+export default Flashback;

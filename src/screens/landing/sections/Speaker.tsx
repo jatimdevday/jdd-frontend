@@ -65,7 +65,7 @@ const Speaker = ({ speakers = [] }: { speakers?: Speakers }) => {
         {/* left side */}
         <div>
           <div
-            className="relative w-full h-[400px] md:h-[600px] rounded-xl"
+            className="relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden"
             style={{
               opacity: isTransitioning ? 0 : 1,
               transition: "opacity 0.4s ease-in-out",

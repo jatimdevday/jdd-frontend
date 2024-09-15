@@ -1,14 +1,14 @@
 import React from "react";
 import Hero from "./sections/Hero";
 import Sponsor from "./sections/Sponsor";
-import Event from "./sections/Event";
+import Roadshow from "./sections/Roadshow";
 import Benefit from "./sections/Benefit";
 import Cta from "./sections/Cta";
 import About from "./sections/About";
 import Community from "./sections/Community";
 import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
-import Agenda from "./sections/Agenda";
+import Flashback from "./sections/Flashback";
 import { getContent, getSpeakers } from "@/lib/firebase";
 import { Content, Speakers } from "@/lib/schema";
 
@@ -21,9 +21,9 @@ const LandingScreen = async () => {
       <Hero content={content} />
       <Sponsor />
       <About content={content} />
-      <Agenda />
+      <Flashback />
       <Speaker speakers={speakers} />
-      <Event />
+      <Roadshow />
       <Benefit content={content} />
       <Gallery />
       <Cta content={content} />

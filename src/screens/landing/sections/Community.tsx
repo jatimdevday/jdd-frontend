@@ -9,13 +9,13 @@ const Community = async () => {
   const communities = (await getCommunities()) as Communities;
 
   return (
-    <div className="py-16 md:py-24">
+    <div className="py-16 md:py-24 bg-primary">
       <div className="flex items-center gap-3 justify-center">
         <DarkStar />
         <p className="font-semibold">Thank&apos;s to</p>
         <DarkStar />
       </div>
-      <p className="text-center mb-12 font-semibold text-4xl md:text-5xl mt-4">
+      <p className="text-center mb-12 font-semibold text-4xl md:text-5xl mt-3">
         Community
       </p>
       <Marquee speed={150}>

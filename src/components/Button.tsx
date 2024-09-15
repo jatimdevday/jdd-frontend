@@ -9,7 +9,7 @@ const variants = {
 const sizes = {
   sm: "px-5 py-2",
   md: "px-6 py-3.5",
-  lg: "px-7 py-4.5",
+  lg: "7 py-4.5",
 };
 
 export interface ButtonProps
@@ -23,7 +23,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={classNames(
-          "inline-flex font-jost rounded-xl font-medium text-lg",
+          "inline-flex font-jost rounded-xl font-medium md:text-lg h-max",
           "ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2",
           "focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           variants[variant],

@@ -18,12 +18,12 @@ const events = [
   },
 ];
 
-const Event = () => {
+const Roadshow = () => {
   return (
-    <div className="container mx-auto py-16 md:py-24">
+    <div className="container mx-auto py-16 md:py-24" id="roadshow">
       <div className="flex items-center mb-3 justify-center gap-3">
         <DarkStar />
-        <p className="font-semibold">Coming Soon</p>
+        <p className="font-semibold">Roadshow Event</p>
         <DarkStar />
       </div>
       <p className="text-center mb-12 font-semibold text-4xl md:text-5xl">
@@ -56,4 +56,4 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default Roadshow;

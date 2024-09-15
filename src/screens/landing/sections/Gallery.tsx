@@ -16,7 +16,7 @@ const Gallery = async () => {
         <p className="text-center mt-2.5 mb-14 font-semibold text-4xl md:text-5xl">
           Kilas Balik Kenangan JDD
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5 sm:grid-flow-col gap-4 sm:gap-8 h-[1500px] sm:h-[560px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5 sm:grid-flow-col gap-4 sm:gap-8 h-[1500px] sm:h-[560px] md:h-[700px] lg:h-[1100px]">
           {galleries.map((gallery, index) => (
             <div
               className={`${

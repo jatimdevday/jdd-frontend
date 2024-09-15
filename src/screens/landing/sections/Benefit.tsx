@@ -30,7 +30,7 @@ const Benefit = ({ content }: { content?: Content }) => {
             ))}
           </div>
         </div>
-        <div className="relative lg:h-full h-[500px] rounded-3xl overflow-hidden">
+        <div className="relative lg:h-full h-[300px] rounded-3xl overflow-hidden">
           <Image
             quality={100}
             src="/world.png"

@@ -32,8 +32,8 @@ const config: Config = {
           xl: "1400px",
         },
         padding: {
-          DEFAULT: "1.5rem",
-          sm: "1.5rem",
+          DEFAULT: "1.2rem",
+          sm: "1.2rem",
           md: "1.5rem",
           lg: "2.5rem",
           xl: "3.5rem",
