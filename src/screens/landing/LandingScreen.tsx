@@ -8,12 +8,12 @@ import About from "./sections/About";
 import Community from "./sections/Community";
 import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
+import Parallel from "./sections/Parallel";
 import Flashback from "./sections/Flashback";
 import { getContent, getSpeakers } from "@/lib/firebase";
 import { Content, Speakers } from "@/lib/schema";
 
 const LandingScreen = async () => {
-  const speakers = (await getSpeakers()) as Speakers;
   const content = (await getContent()) as Content;
 
   return (
@@ -22,7 +22,8 @@ const LandingScreen = async () => {
       <Sponsor />
       <About content={content} />
       <Flashback />
-      <Speaker speakers={speakers} />
+      <Speaker />
+      <Parallel />
       <Roadshow />
       <Benefit content={content} />
       <Gallery />
