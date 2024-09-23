@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import DarkStar from "@/assets/svgs/DarkStar";
 import { Speakers } from "@/lib/schema";
 import { getSpeakers } from "@/lib/firebase";
@@ -19,9 +18,9 @@ const Speaker = async () => {
         <div className="text-2xl font-bold">With The Feature Speaker</div>
 
         {/* TODO: maybe need to change into justify-around and so on */}
-        <div className="flex flex-row justify-between mt-10">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:mt-12">
           {speakers.map((speaker, index) => (
-            <div key={index}>
+            <div key={index} className="mt-12 lg:mt-0">
               <Image
                 className="rounded-2xl"
                 quality={100}
