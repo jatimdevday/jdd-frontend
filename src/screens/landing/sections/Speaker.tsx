@@ -29,8 +29,8 @@ const Speaker = async () => {
                 width={400}
                 height={400}
               />
-              <div className="mt-6 font-medium">{speaker.title}</div>
-              <div className="mt-4 font-bold">{speaker.name}</div>
+              <div className="mt-6 font-semibold text-base">{speaker.title}</div>
+              <div className="mt-4 font-semibold text-4xl">{speaker.name}</div>
             </div>
           ))}
         </div>
