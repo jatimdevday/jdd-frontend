@@ -10,8 +10,8 @@ import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
 import Parallel from "./sections/Parallel";
 import Flashback from "./sections/Flashback";
-import { getContent, getSpeakers } from "@/lib/firebase";
-import { Content, Speakers } from "@/lib/schema";
+import { getContent } from "@/lib/firebase";
+import { Content } from "@/lib/schema";
 
 const LandingScreen = async () => {
   const content = (await getContent()) as Content;
