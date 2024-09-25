@@ -9,32 +9,91 @@ const Ticket = () => {
     {
       title: "Paket Hemat",
       price: "Rp.30.000",
-      features: ["Item 1", "Item 1", "Item 1", "Item 1"],
+      features: [
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: false },
+        { name: "Item 1", included: false },
+      ],
       buttonText: "Beli Tiket",
       highlighted: false,
     },
     {
       title: "Dana Pelajar",
       price: "Rp.50.000",
-      features: ["Item 1", "Item 1", "Item 1", "Item 1", "Item 1"],
+      features: [
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: false },
+        { name: "Item 1", included: false },
+      ],
       buttonText: "Beli Tiket",
       highlighted: false,
     },
     {
       title: "Special Pake Telor",
       price: "Rp.100.000",
-      features: ["Item 1", "Item 1", "Item 1", "Item 1", "Item 1", "Item 1"],
+      features: [
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+      ],
       buttonText: "Beli Tiket →",
       highlighted: true,
     },
     {
       title: "Seadanya",
       price: "Rp.40.000",
-      features: ["Item 1", "Item 1", "Item 1", "Item 1", "Item 1", "Item 1"],
+      features: [
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: true },
+        { name: "Item 1", included: false },
+        { name: "Item 1", included: false },
+        { name: "Item 1", included: false },
+      ],
       buttonText: "Beli Tiket",
       highlighted: false,
     },
   ];
+
+  const CheckIcon = ({ className }: { className?: string }) => (
+    <svg
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M5 13l4 4L19 7"
+      ></path>
+    </svg>
+  );
+
+  const XIcon = ({ className }: { className?: string }) => (
+    <svg
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M6 18L18 6M6 6l12 12"
+      ></path>
+    </svg>
+  );
 
   return (
     <div className="py-16 md:py-24">
@@ -62,29 +121,21 @@ const Ticket = () => {
                   <ul className="mt-6 space-y-4">
                     {tier.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <svg
-                          className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-purple-600'
-                            }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
-                        {feature}
+                        {feature.included ? (
+                          <CheckIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-purple-600'
+                            }`} />
+                        ) : (
+                          <XIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-red-500'
+                            }`} />
+                        )}
+                        {feature.name}
                       </li>
                     ))}
                   </ul>
                   <button
                     className={`mt-8 w-full px-6 py-3 text-sm font-medium rounded-md ${tier.highlighted
-                        ? 'bg-yellow-400 text-purple-600 hover:bg-yellow-500'
-                        : 'bg-purple-600 text-white hover:bg-purple-700'
+                      ? 'bg-yellow-400 text-purple-600 hover:bg-yellow-500'
+                      : 'bg-purple-600 text-white hover:bg-purple-700'
                       }`}
                   >
                     {tier.buttonText}
@@ -95,15 +146,15 @@ const Ticket = () => {
           </div>
 
           {/* Desktop view */}
-          <div className="hidden lg:block overflow-x-auto">
-            <table className="w-full border border-slate-500">
-              <thead className="border border-slate-500">
-                <tr>
+          <div className="hidden lg:block overflow-hidden rounded-lg border border-gray-200">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-gray-200">
                   {pricingData.map((tier, index) => (
                     <th
                       key={index}
-                      className={`px-6 py-8 text-center ${tier.highlighted ? 'bg-purple-600 text-white' : 'bg-white text-gray-900'
-                        }`}
+                      className={`px-6 py-8 text-left ${tier.highlighted ? 'bg-purple-600 text-white' : 'bg-white text-gray-900'
+                        } ${index > 0 ? 'border-l border-gray-200' : ''}`}
                     >
                       <div className="text-lg font-semibold">{tier.title}</div>
                       <div className="mt-2 text-3xl font-bold">{tier.price}</div>
@@ -111,45 +162,37 @@ const Ticket = () => {
                   ))}
                 </tr>
               </thead>
-              <tbody className="border border-slate-500">
-                {[...Array(6)].map((_, rowIndex) => (
+              <tbody>
+                {pricingData[0].features.map((_, rowIndex) => (
                   <tr key={rowIndex}>
                     {pricingData.map((tier, colIndex) => (
                       <td
                         key={colIndex}
-                        className={`px-6 py-4 text-center ${tier.highlighted ? 'bg-purple-600 text-white' : 'bg-white text-gray-600'
-                          }`}
+                        className={`px-6 py-4 ${tier.highlighted ? 'bg-purple-600 text-white' : 'bg-white text-gray-600'
+                          } ${colIndex > 0 ? 'border-l border-gray-200' : ''}`}
                       >
                         {tier.features[rowIndex] && (
-                          <span className="flex items-center justify-center">
-                            <svg
-                              className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-purple-600'
-                                }`}
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M5 13l4 4L19 7"
-                              ></path>
-                            </svg>
-                            {tier.features[rowIndex]}
+                          <span className="flex items-center">
+                            {tier.features[rowIndex].included ? (
+                              <CheckIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-purple-600'
+                                }`} />
+                            ) : (
+                              <XIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-red-500'
+                                }`} />
+                            )}
+                            {tier.features[rowIndex].name}
                           </span>
                         )}
                       </td>
                     ))}
                   </tr>
                 ))}
-                <tr className="bg-red-950">
+                <tr>
                   {pricingData.map((tier, index) => (
                     <td
                       key={index}
-                      className={`px-6 py-8 text-center ${tier.highlighted ? 'bg-purple-600' : 'bg-white'
-                        }`}
+                      className={`px-6 py-8 ${tier.highlighted ? 'bg-purple-600' : 'bg-white'
+                        } ${index > 0 ? 'border-l border-gray-200' : ''}`}
                     >
                       <button
                         className={`px-6 py-2 text-sm font-medium rounded-md ${tier.highlighted
