@@ -10,6 +10,7 @@ export type Content = {
     title: string;
   }[];
   date: string;
+  location: string;
   goal: string;
   registration_link: string;
   registration_tagline: string;
