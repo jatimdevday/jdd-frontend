@@ -1,8 +1,7 @@
-import DarkStar from "@/assets/svgs/DarkStar";
-import { Button } from "@/components/Button";
-import { Content } from "@/lib/schema";
-import Image from "next/image";
 import React from "react";
+
+import CheckIcon from "@/assets/svgs/CheckIcon";
+import XIcon from "@/assets/svgs/XIcon";
 
 const Ticket = () => {
   const pricingData = [
@@ -61,39 +60,39 @@ const Ticket = () => {
     },
   ];
 
-  const CheckIcon = ({ className }: { className?: string }) => (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M5 13l4 4L19 7"
-      ></path>
-    </svg>
-  );
+  // const CheckIcon = ({ className }: { className?: string }) => (
+  //   <svg
+  //     className={className}
+  //     fill="none"
+  //     stroke="currentColor"
+  //     viewBox="0 0 24 24"
+  //     xmlns="http://www.w3.org/2000/svg"
+  //   >
+  //     <path
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //       strokeWidth="2"
+  //       d="M5 13l4 4L19 7"
+  //     ></path>
+  //   </svg>
+  // );
 
-  const XIcon = ({ className }: { className?: string }) => (
-    <svg
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M6 18L18 6M6 6l12 12"
-      ></path>
-    </svg>
-  );
+  // const XIcon = ({ className }: { className?: string }) => (
+  //   <svg
+  //     className={className}
+  //     fill="none"
+  //     stroke="currentColor"
+  //     viewBox="0 0 24 24"
+  //     xmlns="http://www.w3.org/2000/svg"
+  //   >
+  //     <path
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //       strokeWidth="2"
+  //       d="M6 18L18 6M6 6l12 12"
+  //     ></path>
+  //   </svg>
+  // );
 
   return (
     <div className="py-16 md:py-24">
@@ -112,7 +111,7 @@ const Ticket = () => {
             {pricingData.map((tier, index) => (
               <div
                 key={index}
-                className={`rounded-lg overflow-hidden shadow-lg ${tier.highlighted ? 'bg-purple-600 text-white' : 'bg-white'
+                className={`rounded-lg overflow-hidden shadow-lg ${tier.highlighted ? 'bg-[#833cfa] text-white' : 'bg-white'
                   }`}
               >
                 <div className="px-6 py-8">
@@ -120,15 +119,13 @@ const Ticket = () => {
                   <p className="mt-4 text-4xl font-bold">{tier.price}</p>
                   <ul className="mt-6 space-y-4">
                     {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
+                      <li key={featureIndex} className="flex items-center gap-2">
                         {feature.included ? (
-                          <CheckIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-purple-600'
-                            }`} />
+                          <CheckIcon fill={tier.highlighted ? '#caf93a' : '#833CFA'}  />
                         ) : (
-                          <XIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-red-500'
-                            }`} />
+                          <XIcon />
                         )}
-                        {feature.name}
+                        <span>{feature.name}</span>
                       </li>
                     ))}
                   </ul>
@@ -169,18 +166,16 @@ const Ticket = () => {
                       <td
                         key={colIndex}
                         className={`px-6 py-4 ${tier.highlighted ? 'bg-purple-600 text-white' : 'bg-white text-gray-600'
-                          } ${colIndex > 0 ? 'border-l border-gray-200' : ''}`}
+                          } ${colIndex > 0 ? 'border-l border-gray-200' : ''} ${tier.highlighted === true ? 'border-collapse' : ''}`}
                       >
                         {tier.features[rowIndex] && (
-                          <span className="flex items-center">
+                          <span className="flex items-center gap-2">
                             {tier.features[rowIndex].included ? (
-                              <CheckIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-purple-600'
-                                }`} />
+                              <CheckIcon fill={tier.highlighted ? '#caf93a' : '#833CFA'}  />
                             ) : (
-                              <XIcon className={`w-5 h-5 mr-2 ${tier.highlighted ? 'text-yellow-300' : 'text-red-500'
-                                }`} />
+                              <XIcon />
                             )}
-                            {tier.features[rowIndex].name}
+                            <span>{tier.features[rowIndex].name}</span>
                           </span>
                         )}
                       </td>
@@ -195,9 +190,9 @@ const Ticket = () => {
                         } ${index > 0 ? 'border-l border-gray-200' : ''}`}
                     >
                       <button
-                        className={`px-6 py-2 text-sm font-medium rounded-md ${tier.highlighted
-                            ? 'bg-yellow-400 text-purple-600 hover:bg-yellow-500'
-                            : 'bg-purple-600 text-white hover:bg-purple-700'
+                        className={`w-full px-6 py-2 text-sm font-medium rounded-md ${tier.highlighted
+                          ? 'bg-[#caf93a] text-purple-600 hover:bg-yellow-500'
+                          : 'bg-purple-600 text-white hover:bg-purple-700'
                           }`}
                       >
                         {tier.buttonText}
