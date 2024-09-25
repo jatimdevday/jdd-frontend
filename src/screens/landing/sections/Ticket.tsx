@@ -60,45 +60,11 @@ const Ticket = () => {
     },
   ];
 
-  // const CheckIcon = ({ className }: { className?: string }) => (
-  //   <svg
-  //     className={className}
-  //     fill="none"
-  //     stroke="currentColor"
-  //     viewBox="0 0 24 24"
-  //     xmlns="http://www.w3.org/2000/svg"
-  //   >
-  //     <path
-  //       strokeLinecap="round"
-  //       strokeLinejoin="round"
-  //       strokeWidth="2"
-  //       d="M5 13l4 4L19 7"
-  //     ></path>
-  //   </svg>
-  // );
-
-  // const XIcon = ({ className }: { className?: string }) => (
-  //   <svg
-  //     className={className}
-  //     fill="none"
-  //     stroke="currentColor"
-  //     viewBox="0 0 24 24"
-  //     xmlns="http://www.w3.org/2000/svg"
-  //   >
-  //     <path
-  //       strokeLinecap="round"
-  //       strokeLinejoin="round"
-  //       strokeWidth="2"
-  //       d="M6 18L18 6M6 6l12 12"
-  //     ></path>
-  //   </svg>
-  // );
-
   return (
     <div className="py-16 md:py-24">
       <div className="container mx-auto md:flex-row items-center justify-between">
-        {/* for title */}
-        <div className="flex justify-around gap-13 text-center md:text-left mb-6 md:mb-0">
+        {/* title */}
+        <div className="flex flex-col lg:flex-row justify-around gap-10 text-center md:text-left mb-6 md:mb-0">
           <div className="font-semibold text-3xl">Dapatkan Akses Eksklusif dengan Harga Terbaik!</div>
 
           <div>Nikmati akses penuh ke acara IT paling seru di Jawa Timur dengan harga spesial! Dari sesi inspiratif hingga networking bareng komunitas, semuanya bisa kamu dapatkan. Buruan daftar dan jadilah bagian dari gerakan besar ini!</div>
@@ -121,7 +87,7 @@ const Ticket = () => {
                     {tier.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2">
                         {feature.included ? (
-                          <CheckIcon fill={tier.highlighted ? '#caf93a' : '#833CFA'}  />
+                          <CheckIcon fill={tier.highlighted ? '#caf93a' : '#833CFA'} />
                         ) : (
                           <XIcon />
                         )}
@@ -131,8 +97,8 @@ const Ticket = () => {
                   </ul>
                   <button
                     className={`mt-8 w-full px-6 py-3 text-sm font-medium rounded-md ${tier.highlighted
-                      ? 'bg-yellow-400 text-purple-600 hover:bg-yellow-500'
-                      : 'bg-purple-600 text-white hover:bg-purple-700'
+                      ? 'bg-[#caf93a] text-purple-600'
+                      : 'bg-purple-600 text-white'
                       }`}
                   >
                     {tier.buttonText}
@@ -171,7 +137,7 @@ const Ticket = () => {
                         {tier.features[rowIndex] && (
                           <span className="flex items-center gap-2">
                             {tier.features[rowIndex].included ? (
-                              <CheckIcon fill={tier.highlighted ? '#caf93a' : '#833CFA'}  />
+                              <CheckIcon fill={tier.highlighted ? '#caf93a' : '#833CFA'} />
                             ) : (
                               <XIcon />
                             )}
@@ -191,8 +157,8 @@ const Ticket = () => {
                     >
                       <button
                         className={`w-full px-6 py-2 text-sm font-medium rounded-md ${tier.highlighted
-                          ? 'bg-[#caf93a] text-purple-600 hover:bg-yellow-500'
-                          : 'bg-purple-600 text-white hover:bg-purple-700'
+                          ? 'bg-[#caf93a] text-purple-600'
+                          : 'bg-purple-600 text-white'
                           }`}
                       >
                         {tier.buttonText}
@@ -204,16 +170,6 @@ const Ticket = () => {
             </table>
           </div>
         </div>
-        {/* <div className="w-[100%] md:w-[30%] hidden md:block">
-          <Image
-            quality={100}
-            src="/character-angry.png"
-            alt=""
-            layout="responsive"
-            width={300}
-            height={200}
-          />
-        </div> */}
       </div>
     </div>
   );
