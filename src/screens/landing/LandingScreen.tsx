@@ -24,7 +24,7 @@ const LandingScreen = async () => {
       <Flashback />
       <Speaker />
       <Parallel />
-      <Schedule />
+      <Schedule content={content} />
       <Benefit content={content} />
       <Gallery />
       <Cta content={content} />
