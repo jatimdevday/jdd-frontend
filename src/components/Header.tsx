@@ -4,7 +4,10 @@ import { scrollToElement } from "@/lib/utils";
 import React, { useState } from "react";
 import { Button } from "./Button";
 import Image from "next/image";
-import Bars3 from "@/assets/svgs/Bars3";
+import Bars2 from "@/assets/svgs/Bars2";
+import ArrowLongRight from "@/assets/svgs/ArrowLongRight";
+import Link from "next/link";
+import XMark from "@/assets/svgs/XMark";
 
 const links = [
   {
@@ -12,16 +15,20 @@ const links = [
     key: "about",
   },
   {
-    label: "Kilas Balik",
-    key: "kilas",
-  },
-  {
     label: "Roadshow",
     key: "roadshow",
   },
   {
+    label: "Agenda",
+    key: "agenda",
+  },
+  {
     label: "Gallery JDD",
     key: "gallery",
+  },
+  {
+    label: "Semua Tiket",
+    key: "tiket",
   },
 ];
 
@@ -39,7 +46,7 @@ const Header = () => {
 
   return (
     <div
-      className={`bg-darkBg border-b border-b-slate-900 md:border-b-0 ${
+      className={`bg-darkBg -mb-0.5 ${
         isMenuOpen ? "h-screen overflow-hidden" : ""
       }`}
     >
@@ -57,12 +64,16 @@ const Header = () => {
             />
           </div>
           <div className="block md:hidden z-20">
-            <button onClick={toggleMenu} className="text-white">
-              <Bars3 color="white" />
-            </button>
+            {isMenuOpen ? (
+              <XMark className="size-6 text-white" onClick={toggleMenu} />
+            ) : (
+              <button onClick={toggleMenu} className="bg-primary rounded p-1.5">
+                <Bars2 className="size-5" />
+              </button>
+            )}
           </div>
           <div className="hidden md:block">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-6">
               {links.map((item, idx) => (
                 <li
                   key={idx}
@@ -72,7 +83,14 @@ const Header = () => {
                   {item.label}
                 </li>
               ))}
-              <Button>Contact Person</Button>
+              <li>
+                <Link href="#" target="_blank">
+                  <Button className="group">
+                    Beli tiket{" "}
+                    <ArrowLongRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
+                  </Button>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,23 +98,28 @@ const Header = () => {
 
       {/* mobile menu */}
       <div
-        className={`fixed inset-0 bg-darkBg/80 backdrop-blur-md z-10 transform ${
+        className={`fixed inset-0 bg-secondary z-10 transform ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
-        <div className="container mx-auto h-full flex flex-col justify-center items-center">
-          <ul className="space-y-8 text-center">
+        <div className="container mx-auto h-full flex flex-col justify-center items-start">
+          <ul className="space-y-8">
             {links.map((item, idx) => (
               <li
                 key={idx}
-                className="text-white font-medium text-xl hover:text-gray-300 transition-colors"
+                className="text-white font-medium text-2xl hover:text-gray-300 transition-colors"
                 onClick={() => handleLinkClick(item.key)}
               >
                 {item.label}
               </li>
             ))}
             <li>
-              <Button>Contact Person</Button>
+              <Link href="#" target="_blank">
+                <Button className="group">
+                  Beli tiket{" "}
+                  <ArrowLongRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>
