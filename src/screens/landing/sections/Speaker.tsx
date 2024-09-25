@@ -19,9 +19,9 @@ const Speaker = async () => {
         </div>
 
         {/* TODO: maybe need to change into justify-around and so on */}
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:mt-12">
+        <div className="grid md:grid-cols-3 mt-12 gap-8">
           {speakers.map((speaker, index) => (
-            <div key={index} className="mt-12 lg:mt-0">
+            <div key={index}>
               <Image
                 className="rounded-2xl"
                 quality={100}
@@ -30,12 +30,10 @@ const Speaker = async () => {
                 width={400}
                 height={400}
               />
-              <div className="mt-6 font-semibold text-base">
+              <div className="mt-4 font-semibold text-base">
                 {speaker.title}
               </div>
-              <div className="mt-4 font-semibold text-3xl md:text-4xl">
-                {speaker.name}
-              </div>
+              <div className="mt-2 font-semibold text-3xl">{speaker.name}</div>
             </div>
           ))}
         </div>
