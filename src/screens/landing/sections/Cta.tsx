@@ -5,6 +5,7 @@ import Click from "@/assets/svgs/Click";
 import { Button } from "@/components/Button";
 import { Content } from "@/lib/schema";
 import React from "react";
+import Link from "next/link";
 
 const Cta = ({ content }: { content?: Content }) => {
   return (
@@ -18,13 +19,13 @@ const Cta = ({ content }: { content?: Content }) => {
             <Star />
           </div>
           <p className="font-semibold text-3xl md:text-[32px] leading-snug mb-12 mt-4 text-white mx-12">
-            {content?.registration_tagline}
+            Dapatkan Tiketmu Segera!
           </p>
-          <a href={content?.registration_link}>
+          <Link href={content?.registration_link || "#"} target="_blank">
             <Button variant="default">
-              <span className="mr-2">Daftar Sekarang</span> <Click />
+              Daftar Sekarang <Click />
             </Button>
-          </a>
+          </Link>
         </div>
         <World2 className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32" />
       </div>

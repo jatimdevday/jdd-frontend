@@ -10,6 +10,7 @@ import Gallery from "./sections/Gallery";
 import Speaker from "./sections/Speaker";
 import Parallel from "./sections/Parallel";
 import Flashback from "./sections/Flashback";
+import Ticket from "./sections/Ticket";
 import { getContent } from "@/lib/firebase";
 import { Content } from "@/lib/schema";
 
@@ -21,12 +22,13 @@ const LandingScreen = async () => {
       <Hero content={content} />
       <Sponsor />
       <About content={content} />
-      <Flashback />
+      {/* <Flashback /> */}
       <Speaker />
       <Parallel />
       <Schedule content={content} />
       <Benefit content={content} />
       <Gallery />
+      <Ticket />
       <Cta content={content} />
       <Community />
     </>
