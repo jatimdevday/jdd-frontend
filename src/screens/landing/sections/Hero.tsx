@@ -44,7 +44,7 @@ const Hero = ({ content }: { content?: Content }) => {
               Jadi Sponsorship
             </Link>
           </div>
-          <div className="flex gap-2 sm:gap-4 mt-12 flex-col sm:flex-row">
+          <div className="flex gap-3 sm:gap-4 mt-12 flex-wrap">
             <Wrapper label="Participants" total="500+" />
             <Wrapper label="Speakers" total="12" />
             <Wrapper label="Communities" total="30+" />
