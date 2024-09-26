@@ -34,7 +34,7 @@ const Hero = ({ content }: { content?: Content }) => {
             <span className="text-primary">Komunitas.</span>
           </p>
           <p className="text-emerald-50 text-lg mt-6 mb-8 font-medium">
-            {content?.date}
+            {content?.location} - {content?.date}
           </p>
           <div className="flex gap-6 items-center">
             <Link href={content?.registration_link || "#"}>
