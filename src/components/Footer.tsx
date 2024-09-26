@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto text-white py-12 flex gap-16 items-center flex-col md:flex-row">
         <Image
           alt=""
-          src="/jdd-text-img.png"
+          src="/jdd-text-img.webp"
           width={400}
           height={80}
           style={{
