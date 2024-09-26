@@ -6,7 +6,7 @@ import React from "react";
 
 const Cta = ({ content }: { content?: Content }) => {
   return (
-    <div className="py-16 md:py-24">
+    <div className="bg-secondary py-16 md:py-24">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="w-[100%] md:w-[63%] text-center md:text-left mb-6 md:mb-0">
           <div className="flex items-center gap-3 justify-center md:justify-start">
