@@ -22,7 +22,7 @@ const LandingScreen = async () => {
       <Hero content={content} />
       <Sponsor />
       <About content={content} />
-      <Flashback />
+      {/* <Flashback /> */}
       <Speaker />
       <Parallel />
       <Schedule content={content} />
