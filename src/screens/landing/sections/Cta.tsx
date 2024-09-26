@@ -1,36 +1,33 @@
-import DarkStar from "@/assets/svgs/DarkStar";
+import Star from "@/assets/svgs/Star";
+import Star3 from "@/assets/svgs/Star3";
+import World2 from "@/assets/svgs/World2";
+import Click from "@/assets/svgs/Click";
 import { Button } from "@/components/Button";
 import { Content } from "@/lib/schema";
-import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const Cta = ({ content }: { content?: Content }) => {
   return (
-    <div className="bg-secondary py-16 md:py-24">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div className="w-[100%] md:w-[63%] text-center md:text-left mb-6 md:mb-0">
-          <div className="flex items-center gap-3 justify-center md:justify-start">
-            <DarkStar />
-            <p className="font-semibold">Main Event</p>
-            <DarkStar />
+    <div className="flex justify-center bg-secondary">
+      <div className="relative w-full text-center py-16 md:py-24">
+        <Star3 className="absolute top-0 left-0" />
+        <div className="mb-6">
+          <div className="flex items-center gap-3 justify-center">
+            <Star />
+            <p className="font-semibold text-white">Main Event</p>
+            <Star />
           </div>
-          <p className="font-semibold text-3xl md:text-[32px] leading-snug mb-6 mt-4">
-            {content?.registration_tagline}
+          <p className="font-semibold text-3xl md:text-[32px] leading-snug mb-12 mt-4 text-white mx-12">
+            Dapatkan Tiketmu Segera!
           </p>
-          <a href={content?.registration_link}>
-            <Button variant="secondary">Daftar Sekarang</Button>
-          </a>
+          <Link href={content?.registration_link || "#"} target="_blank">
+            <Button variant="default">
+              Daftar Sekarang <Click />
+            </Button>
+          </Link>
         </div>
-        <div className="w-[100%] md:w-[30%] hidden md:block">
-          <Image
-            quality={100}
-            src="/character-angry.png"
-            alt=""
-            layout="responsive"
-            width={300}
-            height={200}
-          />
-        </div>
+        <World2 className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32" />
       </div>
     </div>
   );
