@@ -15,7 +15,7 @@ const Wrapper = ({ total, label }: { total: string; label: string }) => (
 
 const Hero = ({ content }: { content?: Content }) => {
   return (
-    <div className="bg-darkBg text-white py-16 md:py-24">
+    <div className="bg-darkBg text-white py-12 md:py-24">
       <div className="container mx-auto flex gap-12 md:items-center md:flex-row flex-col">
         <div className="md:w-[63%]">
           <Image

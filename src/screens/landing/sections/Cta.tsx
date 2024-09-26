@@ -10,7 +10,7 @@ import Link from "next/link";
 const Cta = ({ content }: { content?: Content }) => {
   return (
     <div className="flex justify-center bg-secondary">
-      <div className="relative w-full text-center py-16 md:py-24">
+      <div className="relative w-full text-center py-12 md:py-24">
         <Star3 className="absolute top-0 left-0" />
         <div className="mb-6">
           <div className="flex items-center gap-3 justify-center">

@@ -6,7 +6,7 @@ import Image from "next/image";
 const Gallery = async () => {
   const galleries = (await getGalleries()) as Galleries;
   return (
-    <div className="bg-darkBg text-white py-16 md:py-24" id="gallery">
+    <div className="bg-darkBg text-white py-12 md:py-24" id="gallery">
       <div className="container mx-auto">
         <div className="flex items-center gap-3 justify-center">
           <Star />

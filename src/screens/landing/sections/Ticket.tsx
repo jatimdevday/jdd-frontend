@@ -225,7 +225,7 @@ const DesktopPricingTable = ({ pricingData }: IDesktopPricingTableProps) => (
 
 const Ticket = () => {
   return (
-    <div className="py-12 md:py-24">
+    <div className="py-12 md:py-24" id="tiket">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-around gap-4 md:gap-12 mb-12">
           <div className="font-semibold text-2xl md:text-3xl md:min-w-[380px] leading-normal">

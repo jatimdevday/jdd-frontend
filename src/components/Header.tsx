@@ -86,7 +86,7 @@ const Header = () => {
               <li>
                 <Link href="#" target="_blank">
                   <Button className="group">
-                    Beli tiket{" "}
+                    Beli Tiket{" "}
                     <ArrowLongRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
                   </Button>
                 </Link>
