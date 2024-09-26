@@ -17,7 +17,7 @@ const Cta = ({ content }: { content?: Content }) => {
             <p className="font-semibold text-white">Main Event</p>
             <Star />
           </div>
-          <p className="font-semibold text-3xl md:text-[32px] leading-snug mb-12 mt-4 text-white">
+          <p className="font-semibold text-3xl md:text-[32px] leading-snug mb-12 mt-4 text-white mx-12">
             {content?.registration_tagline}
           </p>
           <a href={content?.registration_link}>
