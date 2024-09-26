@@ -9,8 +9,8 @@ import React from "react";
 const Cta = ({ content }: { content?: Content }) => {
   return (
     <div className="flex justify-center bg-secondary">
-      <Star3 />
-      <div className="relative container mx-auto text-center py-16 md:py-24">
+      <div className="relative w-full text-center py-16 md:py-24">
+        <Star3 className="absolute top-0 left-0" />
         <div className="mb-6">
           <div className="flex items-center gap-3 justify-center">
             <Star />
@@ -26,7 +26,7 @@ const Cta = ({ content }: { content?: Content }) => {
             </Button>
           </a>
         </div>
-        <World2 className="absolute bottom-0 right-0" />
+        <World2 className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32" />
       </div>
     </div>
   );
