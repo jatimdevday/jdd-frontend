@@ -13,6 +13,7 @@ export type Content = {
   location: string;
   goal: string;
   registration_link: string;
+  registration_sponsorship: string;
   registration_tagline: string;
   tagline: string;
 };

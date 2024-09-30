@@ -8,39 +8,46 @@ import Bars2 from "@/assets/svgs/Bars2";
 import ArrowLongRight from "@/assets/svgs/ArrowLongRight";
 import Link from "next/link";
 import XMark from "@/assets/svgs/XMark";
+import { Content } from "@/lib/schema";
 
-const links = [
-  {
-    label: "Tentang JDD",
-    key: "about",
-  },
-  {
-    label: "Roadshow",
-    key: "roadshow",
-  },
-  {
-    label: "Agenda",
-    key: "agenda",
-  },
-  {
-    label: "Gallery JDD",
-    key: "gallery",
-  },
-  {
-    label: "Semua Tiket",
-    key: "tiket",
-  },
-];
-
-const Header = () => {
+const Header = ({ content }: { content?: Content }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const links = [
+    {
+      label: "Tentang JDD",
+      key: "about",
+    },
+    {
+      label: "Roadshow",
+      key: "roadshow",
+      link: content?.registration_link,
+    },
+    {
+      label: "Agenda",
+      key: "agenda",
+    },
+    {
+      label: "Gallery JDD",
+      key: "gallery",
+    },
+    // {
+    //   label: "Semua Tiket",
+    //   key: "tiket",
+    // },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLinkClick = (item: string) => {
-    scrollToElement(item);
+  const handleLinkClick = (item: {
+    label: string;
+    key: string;
+    link?: string;
+  }) => {
+    scrollToElement(item.key);
+    item.link && window.open(item.link);
     setIsMenuOpen(false);
   };
 
@@ -78,13 +85,13 @@ const Header = () => {
                 <li
                   key={idx}
                   className="text-white font-medium cursor-pointer hover:text-gray-300 transition-colors"
-                  onClick={() => handleLinkClick(item.key)}
+                  onClick={() => handleLinkClick(item)}
                 >
                   {item.label}
                 </li>
               ))}
               <li>
-                <Link href="#" target="_blank">
+                <Link href={content?.registration_link || "#"} target="_blank">
                   <Button className="group">
                     Beli Tiket{" "}
                     <ArrowLongRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
@@ -108,7 +115,7 @@ const Header = () => {
               <li
                 key={idx}
                 className="text-white font-medium text-2xl hover:text-gray-300 transition-colors"
-                onClick={() => handleLinkClick(item.key)}
+                onClick={() => handleLinkClick(item)}
               >
                 {item.label}
               </li>

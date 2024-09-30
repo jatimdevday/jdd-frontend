@@ -14,9 +14,7 @@ import Ticket from "./sections/Ticket";
 import { getContent } from "@/lib/firebase";
 import { Content } from "@/lib/schema";
 
-const LandingScreen = async () => {
-  const content = (await getContent()) as Content;
-
+const LandingScreen = async ({ content }: { content?: Content }) => {
   return (
     <>
       <Hero content={content} />

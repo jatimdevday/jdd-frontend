@@ -37,10 +37,14 @@ const Hero = ({ content }: { content?: Content }) => {
             {content?.location} - {content?.date}
           </p>
           <div className="flex gap-6 items-center">
-            <Link href={content?.registration_link || "#"}>
+            <Link href={content?.registration_link || "#"} target="_blank">
               <Button variant="secondary">Daftar Sekarang</Button>
             </Link>
-            <Link href="#" className="font-jost font-medium md:text-lg">
+            <Link
+              href={content?.registration_sponsorship || "#"}
+              target="_blank"
+              className="font-jost font-medium md:text-lg"
+            >
               Jadi Sponsorship
             </Link>
           </div>
