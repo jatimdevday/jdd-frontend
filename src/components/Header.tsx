@@ -18,14 +18,14 @@ const Header = ({ content }: { content?: Content }) => {
       label: "Tentang JDD",
       key: "about",
     },
-    {
-      label: "Roadshow",
-      link: content?.registration_link,
-    },
-    {
-      label: "Agenda",
-      key: "agenda",
-    },
+    // {
+    //   label: "Roadshow",
+    //   key: "roadshow",
+    // },
+    // {
+    //   label: "Agenda",
+    //   key: "agenda",
+    // },
     {
       label: "Gallery JDD",
       key: "gallery",
@@ -40,16 +40,8 @@ const Header = ({ content }: { content?: Content }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLinkClick = (item: {
-    label: string;
-    key?: string;
-    link?: string;
-  }) => {
-    if (item.link) {
-      window.open(item.link);
-    } else {
-      item.key && scrollToElement(item.key);
-    }
+  const handleLinkClick = (key: string) => {
+    scrollToElement(key);
     setIsMenuOpen(false);
   };
 
@@ -87,7 +79,7 @@ const Header = ({ content }: { content?: Content }) => {
                 <li
                   key={idx}
                   className="text-white font-medium cursor-pointer hover:text-gray-300 transition-colors"
-                  onClick={() => handleLinkClick(item)}
+                  onClick={() => handleLinkClick(item.key)}
                 >
                   {item.label}
                 </li>
@@ -117,7 +109,7 @@ const Header = ({ content }: { content?: Content }) => {
               <li
                 key={idx}
                 className="text-white font-medium text-2xl hover:text-gray-300 transition-colors"
-                onClick={() => handleLinkClick(item)}
+                onClick={() => handleLinkClick(item.key)}
               >
                 {item.label}
               </li>
