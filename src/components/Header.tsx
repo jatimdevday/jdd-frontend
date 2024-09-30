@@ -74,7 +74,7 @@ const Header = ({ content }: { content?: Content }) => {
             )}
           </div>
           <div className="hidden md:block">
-            <ul className="flex items-center gap-6">
+            <ul className="flex items-center gap-8">
               {links.map((item, idx) => (
                 <li
                   key={idx}
