@@ -33,7 +33,7 @@ const Parallel = async () => {
                   objectFit: "cover",
                 }}
               />
-              <div className="p-4 bg-primary rounded-xl z-10 -mt-2.5 relative w-full">
+              <div className="h-full p-4 bg-primary rounded-xl z-10 -mt-2.5 relative w-full">
                 <div className="font-semibold text-xl">{speaker.name}</div>
                 <div className="mt-2 font-semibold">{speaker.title}</div>
               </div>
