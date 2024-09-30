@@ -123,7 +123,7 @@ const Header = ({ content }: { content?: Content }) => {
               </li>
             ))}
             <li>
-              <Link href="#" target="_blank">
+              <Link href={content?.registration_link || "#"} target="_blank">
                 <Button className="group">
                   Beli tiket{" "}
                   <ArrowLongRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
