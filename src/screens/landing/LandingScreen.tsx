@@ -20,7 +20,7 @@ const LandingScreen = async () => {
   return (
     <>
       <Hero content={content} />
-      <Sponsor />
+      <Community />
       <About content={content} />
       {/* <Flashback /> */}
       <Speaker />
@@ -30,7 +30,7 @@ const LandingScreen = async () => {
       <Gallery />
       <Ticket />
       <Cta content={content} />
-      <Community />
+      <Sponsor />
     </>
   );
 };
