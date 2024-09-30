@@ -1,28 +1,9 @@
-import { Content } from "@/lib/schema";
+import { getAgendas } from "@/lib/firebase";
+import { Agendas, Content } from "@/lib/schema";
 import { classNames } from "@/lib/utils";
 
-const scheduleClass = [
-  {
-    title: "Unleashing the Power of Frontend & FullStack Web Dev",
-    speaker: "Amirul Ihsan",
-    lokasi: "Ruang 1",
-    tags: ["Frontend", "Developer", "Fullstack"],
-  },
-  {
-    title: "Mastering React and Next.js for Web Development",
-    speaker: "John Doe",
-    lokasi: "Ruang 2",
-    tags: ["React", "Next.js", "JavaScript"],
-  },
-  {
-    title: "Building Scalable Web Applications with Node.js",
-    speaker: "Jane Smith",
-    lokasi: "Ruang 3",
-    tags: ["Node.js", "Backend", "Scalability"],
-  },
-];
-
-const Agenda = ({ content }: { content?: Content }) => {
+const Agenda = async ({ content }: { content?: Content }) => {
+  const agendas = (await getAgendas()) as Agendas;
   return (
     <div className="py-12 md:py-24 bg-[#141414] text-white" id="agenda">
       <div className="container mx-auto">
@@ -38,7 +19,7 @@ const Agenda = ({ content }: { content?: Content }) => {
             </tr>
           </thead>
           <tbody>
-            {scheduleClass.map((schedule, index) => (
+            {agendas.map((item, index) => (
               <tr
                 key={index}
                 className={classNames(
@@ -47,9 +28,9 @@ const Agenda = ({ content }: { content?: Content }) => {
                 )}
               >
                 <td className="px-3 py-2 md:py-3.5">
-                  <p className="mb-4">{schedule.title}</p>
+                  <p className="mb-4">{item.title}</p>
                   <div className="flex flex-wrap gap-2">
-                    {schedule.tags.map((tag, idx) => (
+                    {item.tags.map((tag, idx) => (
                       <span
                         key={idx}
                         className="bg-secondary text-xs px-2 py-1 rounded"
@@ -60,11 +41,9 @@ const Agenda = ({ content }: { content?: Content }) => {
                   </div>
                 </td>
                 <td className="px-3 py-2 md:py-3.5 font-semibold align-top">
-                  {schedule.speaker}
+                  {item.speaker}
                 </td>
-                <td className="px-3 py-2 md:py-3.5 align-top">
-                  {schedule.lokasi}
-                </td>
+                <td className="px-3 py-2 md:py-3.5 align-top">{item.lokasi}</td>
               </tr>
             ))}
           </tbody>

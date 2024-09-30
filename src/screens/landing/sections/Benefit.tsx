@@ -1,11 +1,11 @@
 import Star from "@/assets/svgs/Star";
 import World from "@/assets/svgs/World";
-import { Content } from "@/lib/schema";
+import { getBenefits } from "@/lib/firebase";
+import { Benefits } from "@/lib/schema";
 import Image from "next/image";
-import React from "react";
 
-const Benefit = ({ content }: { content?: Content }) => {
-  const benefits = content?.benefit;
+const Benefit = async () => {
+  const benefits = (await getBenefits()) as Benefits;
   return (
     <div className="bg-secondary py-20 text-white">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-9 items-center">
@@ -19,7 +19,7 @@ const Benefit = ({ content }: { content?: Content }) => {
             What Will You Get
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-blackText">
-            {benefits?.map((benefit, index) => (
+            {benefits?.list?.map((benefit, index) => (
               <div key={index} className="bg-primary p-5 rounded-[30px]">
                 <World />
                 <p className="font-semibold mt-2 mb-1 text-lg">

@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 import {
+  Agendas,
+  Benefits,
   Communities,
   Content,
   Events,
@@ -60,6 +62,20 @@ export async function getSpeakers(): Promise<Speakers | Error> {
   }
 }
 
+export async function getBenefits(): Promise<Benefits | Error> {
+  try {
+    const dbRef = ref(getDatabase());
+    const data = await get(child(dbRef, "benefit"));
+    if (data.exists()) {
+      return data.val() as Benefits;
+    } else {
+      throw new Error("Speaker data not found");
+    }
+  } catch (error) {
+    return Error(undefined);
+  }
+}
+
 export async function getParallelSpeakers(): Promise<ParallelSpeakers | Error> {
   try {
     const dbRef = ref(getDatabase());
@@ -94,6 +110,20 @@ export async function getEvents(): Promise<Events | Error> {
     const data = await get(child(dbRef, "gallery"));
     if (data.exists()) {
       return data.val() as Events;
+    } else {
+      throw new Error("Event data not found");
+    }
+  } catch (error) {
+    return Error(undefined);
+  }
+}
+
+export async function getAgendas(): Promise<Agendas | Error> {
+  try {
+    const dbRef = ref(getDatabase());
+    const data = await get(child(dbRef, "agenda"));
+    if (data.exists()) {
+      return data.val() as Agendas;
     } else {
       throw new Error("Event data not found");
     }

@@ -5,10 +5,6 @@ export type Communities = {
 
 export type Content = {
   about: string;
-  benefit: {
-    description: string;
-    title: string;
-  }[];
   date: string;
   location: string;
   goal: string;
@@ -16,6 +12,14 @@ export type Content = {
   registration_sponsorship: string;
   registration_tagline: string;
   tagline: string;
+};
+
+export type Benefits = {
+  photo: string[];
+  list: {
+    description: string;
+    title: string;
+  }[];
 };
 
 export type Galleries = string[];
@@ -46,4 +50,11 @@ export type Events = {
   location: string;
   photo: string;
   link: string;
+}[];
+
+export type Agendas = {
+  title: string;
+  speaker: string;
+  lokasi: string;
+  tags: string[];
 }[];
