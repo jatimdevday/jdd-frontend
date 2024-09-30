@@ -4,7 +4,7 @@ import React from "react";
 import { Content } from "@/lib/schema";
 import Link from "next/link";
 
-const Wrapper = ({ total, label }: { total: string; label: string }) => (
+const Wrapper = ({ total, label }: { total?: string; label: string }) => (
   <p>
     <span className="text-primary text-3xl md:text-[32px] font-bold">
       {total}
@@ -49,9 +49,9 @@ const Hero = ({ content }: { content?: Content }) => {
             </Link>
           </div>
           <div className="flex gap-3 sm:gap-4 mt-12 flex-wrap">
-            <Wrapper label="Participants" total="500+" />
-            <Wrapper label="Speakers" total="12" />
-            <Wrapper label="Communities" total="30+" />
+            <Wrapper label="Participants" total={content?.participants} />
+            <Wrapper label="Speakers" total={content?.speakers} />
+            <Wrapper label="Communities" total={content?.communities} />
           </div>
         </div>
         <div className="md:w-[37%] hidden md:block">

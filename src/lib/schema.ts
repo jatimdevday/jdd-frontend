@@ -12,6 +12,9 @@ export type Content = {
   registration_sponsorship: string;
   registration_tagline: string;
   tagline: string;
+  participants: string;
+  speakers: string;
+  communities: string;
 };
 
 export type Benefits = {
