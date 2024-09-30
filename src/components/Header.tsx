@@ -20,7 +20,6 @@ const Header = ({ content }: { content?: Content }) => {
     },
     {
       label: "Roadshow",
-      key: "roadshow",
       link: content?.registration_link,
     },
     {
@@ -43,11 +42,14 @@ const Header = ({ content }: { content?: Content }) => {
 
   const handleLinkClick = (item: {
     label: string;
-    key: string;
+    key?: string;
     link?: string;
   }) => {
-    scrollToElement(item.key);
-    item.link && window.open(item.link);
+    if (item.link) {
+      window.open(item.link);
+    } else {
+      item.key && scrollToElement(item.key);
+    }
     setIsMenuOpen(false);
   };
 

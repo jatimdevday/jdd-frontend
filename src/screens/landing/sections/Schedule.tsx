@@ -24,7 +24,7 @@ const scheduleClass = [
 
 const Roadshow = ({ content }: { content?: Content }) => {
   return (
-    <div className="py-12 md:py-24 bg-[#141414] text-white" id="roadshow">
+    <div className="py-12 md:py-24 bg-[#141414] text-white" id="agenda">
       <div className="container mx-auto">
         <div className="font-semibold text-2xl sm:text-3xl text-center sm:text-left">
           {content?.date}
