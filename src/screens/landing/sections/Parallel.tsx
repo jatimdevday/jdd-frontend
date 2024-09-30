@@ -34,10 +34,8 @@ const Parallel = async () => {
                 }}
               />
               <div className="p-4 bg-primary rounded-xl z-10 -mt-2.5 relative w-full">
-                <div className="font-semibold text-base">{speaker.title}</div>
-                <div className="mt-2 font-semibold text-3xl">
-                  {speaker.name}
-                </div>
+                <div className="font-semibold text-xl">{speaker.name}</div>
+                <div className="mt-2 font-semibold">{speaker.title}</div>
               </div>
             </div>
           ))}
