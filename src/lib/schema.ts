@@ -19,6 +19,7 @@ export type Benefits = {
   list: {
     description: string;
     title: string;
+    icon: string;
   }[];
 };
 

@@ -11,10 +11,11 @@ import Speaker from "./sections/Speaker";
 import Parallel from "./sections/Parallel";
 import Flashback from "./sections/Flashback";
 import Ticket from "./sections/Ticket";
-import { getContent } from "@/lib/firebase";
-import { Content } from "@/lib/schema";
+import { getBenefits, getContent } from "@/lib/firebase";
+import { Benefits, Content } from "@/lib/schema";
 
 const LandingScreen = async ({ content }: { content?: Content }) => {
+  const benefits = (await getBenefits()) as Benefits;
   return (
     <>
       <Hero content={content} />
@@ -24,7 +25,7 @@ const LandingScreen = async ({ content }: { content?: Content }) => {
       <Speaker />
       <Parallel />
       {/* <Agenda content={content} /> */}
-      <Benefit />
+      <Benefit benefits={benefits} />
       <Gallery />
       {/* <Ticket /> */}
       <Cta content={content} />
