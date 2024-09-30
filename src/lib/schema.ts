@@ -19,6 +19,12 @@ export type Content = {
 
 export type Galleries = string[];
 
+export type ParallelSpeakers = {
+  name: string;
+  photo: string;
+  title: string;
+}[];
+
 export type Speakers = {
   name: string;
   photo: string;

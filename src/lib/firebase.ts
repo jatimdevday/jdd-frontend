@@ -5,6 +5,7 @@ import {
   Content,
   Events,
   Galleries,
+  ParallelSpeakers,
   Speakers,
   ThrowbackEvent,
 } from "./schema";
@@ -49,6 +50,20 @@ export async function getSpeakers(): Promise<Speakers | Error> {
   try {
     const dbRef = ref(getDatabase());
     const data = await get(child(dbRef, "speaker"));
+    if (data.exists()) {
+      return data.val() as Speakers;
+    } else {
+      throw new Error("Speaker data not found");
+    }
+  } catch (error) {
+    return Error(undefined);
+  }
+}
+
+export async function getParallelSpeakers(): Promise<ParallelSpeakers | Error> {
+  try {
+    const dbRef = ref(getDatabase());
+    const data = await get(child(dbRef, "parallel"));
     if (data.exists()) {
       return data.val() as Speakers;
     } else {

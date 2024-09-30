@@ -1,46 +1,10 @@
 import Image from "next/image";
 import PrimaryStar from "@/assets/svgs/PrimaryStar";
+import { getParallelSpeakers } from "@/lib/firebase";
+import { ParallelSpeakers } from "@/lib/schema";
 
 const Parallel = async () => {
-  // TODO: need to change into real data
-  const speakers = [
-    {
-      linkedin: "https://www.linkedin.com/in/rubiagatra",
-      name: "Doni Rubiagtra",
-      photo:
-        "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fdoni_rubiagatra.jpg?alt=media&token=fc1134b9-bba0-4cce-bb61-84b3177cafec",
-      title: "Partner & VP of Engineering at Zero One Group",
-      twitter: "https://x.com/rubiagatra",
-      youtube: "",
-    },
-    {
-      linkedin: "https://www.linkedin.com/in/rubiagatra",
-      name: "Doni Rubiagtra",
-      photo:
-        "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fdoni_rubiagatra.jpg?alt=media&token=fc1134b9-bba0-4cce-bb61-84b3177cafec",
-      title: "Partner & VP of Engineering at Zero One Group",
-      twitter: "https://x.com/rubiagatra",
-      youtube: "",
-    },
-    {
-      linkedin: "https://www.linkedin.com/in/rubiagatra",
-      name: "Doni Rubiagtra",
-      photo:
-        "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fdoni_rubiagatra.jpg?alt=media&token=fc1134b9-bba0-4cce-bb61-84b3177cafec",
-      title: "Partner & VP of Engineering at Zero One Group",
-      twitter: "https://x.com/rubiagatra",
-      youtube: "",
-    },
-    {
-      linkedin: "https://www.linkedin.com/in/rubiagatra",
-      name: "Doni Rubiagtra",
-      photo:
-        "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fdoni_rubiagatra.jpg?alt=media&token=fc1134b9-bba0-4cce-bb61-84b3177cafec",
-      title: "Partner & VP of Engineering at Zero One Group",
-      twitter: "https://x.com/rubiagatra",
-      youtube: "",
-    },
-  ];
+  const speakers = (await getParallelSpeakers()) as ParallelSpeakers;
 
   return (
     <div className="bg-darkBg py-12 md:py-24" id="speakers">
