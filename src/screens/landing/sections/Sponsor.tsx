@@ -1,15 +1,11 @@
+import { getSponsors } from "@/lib/firebase";
+import { Sponsors } from "@/lib/schema";
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-const logos = [
-  "logo-ipsum.png",
-  "logo-ipsum-2.png",
-  "logo-ipsum-3.png",
-  "logo-ipsum-4.png",
-];
-
-const Sponsor = () => {
+const Sponsor = async () => {
+  const data = (await getSponsors()) as Sponsors;
   return (
     <div className="bg-primary py-[70px]" id="sponsor">
       <div className="flex mb-10 justify-center items-center gap-3">
@@ -36,12 +32,12 @@ const Sponsor = () => {
         />
       </div>
       <Marquee speed={120}>
-        {logos.map((logo, index) => (
+        {data?.map((item, index) => (
           <Image
             key={index}
             quality={100}
-            src={`/${logo}`}
-            alt={`Logo ${index + 1}`}
+            src={item.logo}
+            alt={item.name}
             width={250}
             height={100}
             className="mx-8"

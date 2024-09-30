@@ -70,3 +70,8 @@ export type Tickets = {
   link: string;
   highlighted: boolean;
 }[];
+
+export type Sponsors = {
+  name: string;
+  logo: string;
+}[];

@@ -287,5 +287,23 @@
       "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
       "highlighted": false
     }
+  ],
+  "sponsor": [
+    {
+      "name": "Tech Innovators",
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum-2.png?alt=media&token=2e2d7064-2113-4189-b392-ac8306077e3d"
+    },
+    {
+      "name": "CodeCraft Labs",
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum-3.png?alt=media&token=35f25bd0-da66-4cee-aaae-abb57e5725ea"
+    },
+    {
+      "name": "AI Pioneers",
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum-4.png?alt=media&token=0f611817-e8df-4885-866d-b8a842fd75b3"
+    },
+    {
+      "name": "Cloud Solutions",
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum.png?alt=media&token=3a966c7a-fd6f-4a48-b335-afe0976a12ec"
+    }
   ]
 }

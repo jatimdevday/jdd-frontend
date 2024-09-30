@@ -11,6 +11,7 @@ import {
   Tickets,
   Speakers,
   ThrowbackEvent,
+  Sponsors,
 } from "./schema";
 
 const firebaseConfig = {
@@ -139,6 +140,20 @@ export async function getTickets(): Promise<Tickets | Error> {
     const data = await get(child(dbRef, "ticket"));
     if (data.exists()) {
       return data.val() as Tickets;
+    } else {
+      throw new Error("Event data not found");
+    }
+  } catch (error) {
+    return Error(undefined);
+  }
+}
+
+export async function getSponsors(): Promise<Sponsors | Error> {
+  try {
+    const dbRef = ref(getDatabase());
+    const data = await get(child(dbRef, "sponsor"));
+    if (data.exists()) {
+      return data.val() as Sponsors;
     } else {
       throw new Error("Event data not found");
     }
