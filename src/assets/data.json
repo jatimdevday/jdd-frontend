@@ -229,5 +229,63 @@
       "lokasi": "Ruang 9",
       "tags": ["WebAssembly", "Web3", "Emerging Technologies"]
     }
+  ],
+  "ticket": [
+    {
+      "title": "Early Bird",
+      "price": "Rp25.000",
+      "features": [
+        { "name": "Akses semua sesi", "included": true },
+        { "name": "Sertifikat kehadiran", "included": true },
+        { "name": "Makan siang", "included": false },
+        { "name": "Networking session", "included": false },
+        { "name": "Workshop eksklusif", "included": false },
+        { "name": "Merchandise eksklusif", "included": false }
+      ],
+      "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
+      "highlighted": false
+    },
+    {
+      "title": "Reguler",
+      "price": "Rp35.000",
+      "features": [
+        { "name": "Akses semua sesi", "included": true },
+        { "name": "Sertifikat kehadiran", "included": true },
+        { "name": "Makan siang", "included": true },
+        { "name": "Networking session", "included": false },
+        { "name": "Workshop eksklusif", "included": false },
+        { "name": "Merchandise eksklusif", "included": false }
+      ],
+      "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
+      "highlighted": false
+    },
+    {
+      "title": "Bundling",
+      "price": "Rp150.000",
+      "features": [
+        { "name": "Akses semua sesi", "included": true },
+        { "name": "Sertifikat kehadiran", "included": true },
+        { "name": "Makan siang", "included": true },
+        { "name": "Networking session", "included": true },
+        { "name": "Workshop eksklusif", "included": true },
+        { "name": "Merchandise eksklusif", "included": true }
+      ],
+      "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
+      "highlighted": true
+    },
+    {
+      "title": "Last Call",
+      "price": "Rp50.000",
+      "features": [
+        { "name": "Akses semua sesi", "included": true },
+        { "name": "Sertifikat kehadiran", "included": true },
+        { "name": "Makan siang", "included": true },
+        { "name": "Networking session", "included": true },
+        { "name": "Workshop eksklusif", "included": false },
+        { "name": "Merchandise eksklusif", "included": false }
+      ],
+      "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
+      "highlighted": false
+    }
   ]
 }

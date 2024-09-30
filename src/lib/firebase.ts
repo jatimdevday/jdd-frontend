@@ -8,6 +8,7 @@ import {
   Events,
   Galleries,
   ParallelSpeakers,
+  Tickets,
   Speakers,
   ThrowbackEvent,
 } from "./schema";
@@ -124,6 +125,20 @@ export async function getAgendas(): Promise<Agendas | Error> {
     const data = await get(child(dbRef, "agenda"));
     if (data.exists()) {
       return data.val() as Agendas;
+    } else {
+      throw new Error("Event data not found");
+    }
+  } catch (error) {
+    return Error(undefined);
+  }
+}
+
+export async function getTickets(): Promise<Tickets | Error> {
+  try {
+    const dbRef = ref(getDatabase());
+    const data = await get(child(dbRef, "ticket"));
+    if (data.exists()) {
+      return data.val() as Tickets;
     } else {
       throw new Error("Event data not found");
     }

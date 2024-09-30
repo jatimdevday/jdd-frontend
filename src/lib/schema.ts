@@ -62,3 +62,11 @@ export type Agendas = {
   lokasi: string;
   tags: string[];
 }[];
+
+export type Tickets = {
+  title: string;
+  price: string;
+  features: { name: string; included: boolean }[];
+  link: string;
+  highlighted: boolean;
+}[];
