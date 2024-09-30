@@ -31,7 +31,7 @@ const Sponsor = async () => {
           }}
         />
       </div>
-      <Marquee speed={120}>
+      <Marquee speed={150}>
         {data?.map((item, index) => (
           <Image
             key={index}
