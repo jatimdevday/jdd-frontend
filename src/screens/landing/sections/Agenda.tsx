@@ -22,7 +22,7 @@ const scheduleClass = [
   },
 ];
 
-const Roadshow = ({ content }: { content?: Content }) => {
+const Agenda = ({ content }: { content?: Content }) => {
   return (
     <div className="py-12 md:py-24 bg-[#141414] text-white" id="agenda">
       <div className="container mx-auto">
@@ -74,4 +74,4 @@ const Roadshow = ({ content }: { content?: Content }) => {
   );
 };
 
-export default Roadshow;
+export default Agenda;

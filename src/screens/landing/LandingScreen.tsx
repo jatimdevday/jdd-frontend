@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./sections/Hero";
 import Sponsor from "./sections/Sponsor";
-import Schedule from "./sections/Schedule";
+import Agenda from "./sections/Agenda";
 import Benefit from "./sections/Benefit";
 import Cta from "./sections/Cta";
 import About from "./sections/About";
@@ -23,7 +23,7 @@ const LandingScreen = async ({ content }: { content?: Content }) => {
       {/* <Flashback /> */}
       <Speaker />
       <Parallel />
-      <Schedule content={content} />
+      <Agenda content={content} />
       <Benefit content={content} />
       <Gallery />
       {/* <Ticket /> */}
