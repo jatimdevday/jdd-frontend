@@ -66,13 +66,15 @@ const Ticket = async () => {
                 <ul className="space-y-4">
                   {item?.features?.map((feature, idx) => (
                     <li className="flex items-stretch gap-2" key={idx}>
-                      {feature.included ? (
-                        <CheckIcon
-                          fill={item.highlighted ? "#caf93a" : "#833CFA"}
-                        />
-                      ) : (
-                        <XIcon />
-                      )}
+                      <div>
+                        {feature.included ? (
+                          <CheckIcon
+                            fill={item.highlighted ? "#caf93a" : "#833CFA"}
+                          />
+                        ) : (
+                          <XIcon />
+                        )}
+                      </div>
                       <span>{feature.name}</span>
                     </li>
                   ))}
@@ -89,15 +91,15 @@ const Ticket = async () => {
         </div>
 
         {/* Desktop view */}
-        <div className="hidden lg:block overflow-hidden rounded-2xl border-[#BABABA] border">
-          <table className="w-full">
+        <div className="hidden lg:block overflow-hidden rounded-2xl border-[#BABABA] border mx-auto w-[800px]">
+          <table className="w-full table-fixed">
             <thead>
               <tr className="border-b-[0.5px] border-b-[#BABABA]">
                 {tickets.map((item, index) => (
                   <th
                     key={index}
                     className={classNames(
-                      "p-7 text-left",
+                      "p-7 text-left w-1/2",
                       item.highlighted
                         ? "bg-secondary text-white"
                         : "bg-[#F4F5FF]",
@@ -128,13 +130,15 @@ const Ticket = async () => {
                   >
                     {item?.features?.map((feature, idx) => (
                       <li className="flex gap-2" key={idx}>
-                        {feature.included ? (
-                          <CheckIcon
-                            fill={item.highlighted ? "#caf93a" : "#833CFA"}
-                          />
-                        ) : (
-                          <XIcon />
-                        )}
+                        <div>
+                          {feature.included ? (
+                            <CheckIcon
+                              fill={item.highlighted ? "#caf93a" : "#833CFA"}
+                            />
+                          ) : (
+                            <XIcon />
+                          )}
+                        </div>
                         <span className="-mt-0.5">{feature.name}</span>
                       </li>
                     ))}
