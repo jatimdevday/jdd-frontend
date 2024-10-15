@@ -36,7 +36,7 @@ const Ticket = async () => {
   return (
     <div className="py-12 md:py-24" id="tiket">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row justify-around gap-4 md:gap-12 mb-12">
+        <div className="flex flex-col md:flex-row justify-around gap-4 md:gap-12 mb-12">
           <div className="font-semibold text-2xl md:text-3xl md:min-w-[380px] leading-normal">
             Dapatkan Akses Eksklusif dengan Harga Terbaik!
           </div>
@@ -49,7 +49,7 @@ const Ticket = async () => {
         </div>
 
         {/* Mobile view */}
-        <div className="lg:hidden space-y-6">
+        <div className="md:hidden space-y-6">
           {tickets.map((item, idx) => (
             <div
               key={idx}
@@ -91,7 +91,7 @@ const Ticket = async () => {
         </div>
 
         {/* Desktop view */}
-        <div className="hidden lg:block overflow-hidden rounded-2xl border-[#BABABA] border mx-auto w-[800px]">
+        <div className="hidden md:block overflow-hidden rounded-2xl border-[#BABABA] border mx-auto w-[740px] lg:w-[800px]">
           <table className="w-full table-fixed">
             <thead>
               <tr className="border-b-[0.5px] border-b-[#BABABA]">
