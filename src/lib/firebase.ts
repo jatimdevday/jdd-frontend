@@ -12,6 +12,7 @@ import {
   Speakers,
   ThrowbackEvent,
   Sponsors,
+  SocialMedia
 } from "./schema";
 
 const firebaseConfig = {
@@ -170,6 +171,20 @@ export async function getThrowbackEvent(
     const data = await get(child(dbRef, `jdd${year}`));
     if (data.exists()) {
       return data.val() as ThrowbackEvent;
+    } else {
+      throw new Error("Event data not found");
+    }
+  } catch (error) {
+    return Error(undefined);
+  }
+}
+
+export async function getSocialMedia(): Promise<SocialMedia | Error> {
+  try {
+    const dbRef = ref(getDatabase());
+    const data = await get(child(dbRef, "socialMedia"));
+    if (data.exists()) {
+      return data.val() as SocialMedia;
     } else {
       throw new Error("Event data not found");
     }

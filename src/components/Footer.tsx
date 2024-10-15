@@ -1,7 +1,16 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-const Footer = () => {
+import Instagram from "@/assets/svgs/Instagram";
+import WhatsApp from "@/assets/svgs/WhatsApp";
+
+import { getSocialMedia } from "@/lib/firebase";
+import { SocialMedia } from "@/lib/schema";
+
+const Footer = async () => {
+  const socialMedia = (await getSocialMedia()) as SocialMedia;
+
   return (
     <footer className="bg-darkBg">
       <div className="container mx-auto text-white py-12 flex gap-16 items-center flex-col md:flex-row">
@@ -30,7 +39,15 @@ const Footer = () => {
             akademisi,pemerintah, dan industri teknologi di Jawa Timur, guna
             mendorong inovasi dan pertumbuhan sektor digital.
           </p>
-          <p>© 2024, All Rights Reserved</p>
+          <div className="flex gap-4">
+            <Link target="_blank" href={socialMedia.instagram}>
+              <Instagram />
+            </Link>
+            <Link target="_blank" href={socialMedia.whatsapp}>
+              <WhatsApp />
+            </Link>
+          </div>
+          <p>JDD Team © 2024, All Rights Reserved</p>
         </div>
       </div>
     </footer>
