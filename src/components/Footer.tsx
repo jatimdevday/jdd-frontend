@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Instagram from "@/assets/svgs/Instagram";
-import WhatsApp from "@/assets/svgs/Whatsapp";
+import WhatsApp from "@/assets/svgs/WhatsApp";
 
 import { getSocialMedia } from "@/lib/firebase";
 import { SocialMedia } from "@/lib/schema";
 
 const Footer = async () => {
-  const socialMedia = (await getSocialMedia()) as SocialMedia
+  const socialMedia = (await getSocialMedia()) as SocialMedia;
 
   return (
     <footer className="bg-darkBg">
@@ -40,10 +40,10 @@ const Footer = async () => {
             mendorong inovasi dan pertumbuhan sektor digital.
           </p>
           <div className="flex gap-4">
-            <Link className="cursor-pointer" href={socialMedia.instagram}>
+            <Link target="_blank" href={socialMedia.instagram}>
               <Instagram />
             </Link>
-            <Link className="cursor-pointer" href={socialMedia.whatsapp}>
+            <Link target="_blank" href={socialMedia.whatsapp}>
               <WhatsApp />
             </Link>
           </div>
