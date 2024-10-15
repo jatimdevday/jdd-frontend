@@ -30,10 +30,10 @@ const Header = ({ content }: { content?: Content }) => {
       label: "Gallery JDD",
       key: "gallery",
     },
-    // {
-    //   label: "Semua Tiket",
-    //   key: "tiket",
-    // },
+    {
+      label: "Semua Tiket",
+      key: "tiket",
+    },
   ];
 
   const toggleMenu = () => {
