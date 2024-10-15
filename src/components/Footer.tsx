@@ -1,5 +1,9 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+import Instagram from "@/assets/svgs/Instagram";
+import WhatsApp from "@/assets/svgs/Whatsapp";
 
 const Footer = () => {
   return (
@@ -30,7 +34,15 @@ const Footer = () => {
             akademisi,pemerintah, dan industri teknologi di Jawa Timur, guna
             mendorong inovasi dan pertumbuhan sektor digital.
           </p>
-          <p>© 2024, All Rights Reserved</p>
+          <div className="flex gap-4">
+            <Link className="cursor-pointer" href="https://google.com">
+              <Instagram />
+            </Link>
+            <Link className="cursor-pointer" href="https://google.com">
+              <WhatsApp />
+            </Link>
+          </div>
+          <p>JDD Team © 2024, All Rights Reserved</p>
         </div>
       </div>
     </footer>
