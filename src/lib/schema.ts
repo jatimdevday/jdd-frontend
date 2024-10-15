@@ -75,3 +75,8 @@ export type Sponsors = {
   name: string;
   logo: string;
 }[];
+
+export type SocialMedia = {
+  instagram: string
+  whatsapp: string
+}
