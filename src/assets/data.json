@@ -1,40 +1,106 @@
 {
   "agenda": [
     {
-      "lokasi": "Ruang 4",
-      "speaker": "Sophia Chen",
-      "tags": ["UX/UI", "Design", "User Experience"],
-      "title": "The Art of UX/UI Design: Creating Delightful User Experiences"
+      "speaker": "Doni Rubiagatra",
+      "lokasi": "Aula GKB IV Lt 9",
+      "tags": ["Career Development", "Soft Skills", "Global"],
+      "title": "Becoming a Local Digital Talent with a Global Perspective"
     },
     {
-      "lokasi": "Ruang 5",
-      "speaker": "Satoshi Nakamoto",
-      "tags": ["Blockchain", "Ethereum", "Smart Contracts"],
-      "title": "Blockchain Revolution: Building Decentralized Apps"
+      "speaker": "Erico Darmawan",
+      "lokasi": "Aula GKB IV Lt 9",
+      "tags": ["Flutter", "Mobile Dev", "Career"],
+      "title": "Establishing a Career as a Flutter Developer in the Era of Global Competition"
     },
     {
-      "lokasi": "Ruang 6",
-      "speaker": "Dr. Alan Turing",
-      "tags": ["Machine Learning", "AI", "Web Intelligence"],
-      "title": "Machine Learning for Web Developers: Enhancing User Engagement"
+      "speaker": "Setia Budi",
+      "lokasi": "Aula GKB IV Lt 9",
+      "tags": ["Machine Learning", "Programming", "Data Science"],
+      "title": "Machine Learning Engineering: a Gentle Introduction"
     },
     {
-      "lokasi": "Ruang 7",
-      "speaker": "Elliot Alderson",
-      "tags": ["Cybersecurity", "Web Security", "Ethical Hacking"],
-      "title": "Cybersecurity Best Practices for Modern Web Applications"
+      "speaker": "Christian Sri K.",
+      "lokasi": "",
+      "tags": ["Machine Learning", "Data Science", "Analytics"],
+      "title": "Social Media Sentiment Analysis"
     },
     {
-      "lokasi": "Ruang 8",
-      "speaker": "Ada Lovelace",
-      "tags": ["PWA", "Mobile Web", "Cross-platform"],
-      "title": "Progressive Web Apps: Bridging the Gap Between Web and Mobile"
+      "speaker": "Regita Putri Permata",
+      "lokasi": "",
+      "tags": ["Machine Learning", "Time Series", "Analytics"],
+      "title": "Machine Learning for TIme Series Forecasting"
     },
     {
-      "lokasi": "Ruang 9",
-      "speaker": "Tim Berners-Lee",
-      "tags": ["WebAssembly", "Web3", "Emerging Technologies"],
-      "title": "The Future of Web: Exploring WebAssembly and Web3"
+      "speaker": "Iqbal Maulana",
+      "lokasi": "",
+      "tags": ["AI", "Large Language Model", "Data"],
+      "title": "RAG 101: Extend LLM Knowledge with Private Data"
+    },
+    {
+      "speaker": "Ronald Dimas Y.",
+      "lokasi": "",
+      "tags": ["Docker", "DevOps", "Backend"],
+      "title": "Introduction to Containerization with Docker"
+    },
+    {
+      "speaker": "Fahmi Syaifudin",
+      "lokasi": "",
+      "tags": ["DevOps", "CI/CD", "Automation"],
+      "title": "CI/CD Pipeline Setup with Gitlab"
+    },
+    {
+      "speaker": "Musa Al Farid, Sawitry Dyah K, Haidar Zamzam",
+      "lokasi": "",
+      "tags": ["Community", "Networking", "Development"],
+      "title": "IT Community Gathering: Sharing, Collaboration, and Inspiration"
+    },
+    {
+      "speaker": "Afrizal F.A, Wahyu Arbianda Y.P",
+      "lokasi": "",
+      "tags": ["Security", "Development", "Best Practice"],
+      "title": "Kode Amana, Dunia Aman"
+    },
+    {
+      "speaker": "Yusuf Umar Hanafi",
+      "lokasi": "",
+      "tags": ["Flutter", "Mobile Dev", "Framework"],
+      "title": "Build Your First Flutter Apps with Stacked"
+    },
+    {
+      "speaker": "Akbar Putra Pai",
+      "lokasi": "",
+      "tags": ["Product Design", "Career", "Interview"],
+      "title": "How to Succeed in Product Design Interviews"
+    },
+    {
+      "speaker": "Habib Al Hakim",
+      "lokasi": "",
+      "tags": ["Design", "Career", "Freelance"],
+      "title": "Mau Jadi Designer Fulltime atau Freelancer"
+    },
+    {
+      "speaker": "Fathur Rohim",
+      "lokasi": "",
+      "tags": ["QA Testing", "Automation", "Playwright"],
+      "title": "Getting started Playwright for QA New Generation"
+    },
+    {
+      "speaker": "Danny Dwi Cahyono",
+      "lokasi": "",
+      "tags": ["React", "Frontend", "Full Stack"],
+      "title": "Building Modern Full-Stack React Apps with Remix"
+    },
+    {
+      "speaker": "Juniardy Setiowidayoga",
+      "lokasi": "",
+      "tags": ["Web3", "Blockchain", "Development"],
+      "title": "Web3 Fundamental, Journey to be Web3 Developer"
+    },
+    {
+      "speaker": "Joshua Nathaniel M",
+      "lokasi": "",
+      "tags": ["Web3", "Frontend", "Smart Contract"],
+      "title": "Integrate Smart Contracts in Client Side"
     }
   ],
   "benefit": {
@@ -132,7 +198,7 @@
       "name": "PasuruanDev"
     },
     {
-      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/community%2FPatriaDev.png?alt=media&token=375cfaca-a9e5-475e-b0f5-824a2f085050",
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/community%2FPatriaDev.jpeg?alt=media&token=07d7fc4c-a143-417e-9ddc-2a9a483debfb",
       "name": "PatriaDev"
     },
     {
@@ -198,7 +264,7 @@
   ],
   "content": {
     "about": "Jatim Developer Day (JDD) adalah acara tahunan komunitas teknologi yang bertujuan untuk memfasilitasi kolaborasi antara komunitas, akademisi,pemerintah, dan industri teknologi di Jawa Timur, guna mendorong inovasi dan pertumbuhan sektor digital.",
-    "communities": "30",
+    "communities": "35+",
     "date": "2 November 2024",
     "goal": "Jawa Timur Developer Day 2024 hadir dengan tema: Membangun Ekosistem IT di Jawa Timur Melalui Komunitas. Acara ini diharapkan dapat menciptakan ekosistem yang kondusif bagi pertumbuhan industri teknologi dan startup di wilayah ini. Dengan memfasilitasi interaksi antara para developer, perusahaan, dan pemangku kepentingan lainnya, diharapkan dapat muncul peluang-peluang baru untuk mengembangkan bisnis dan menciptakan lapangan kerja. Selain itu, acara ini juga menjadi momentum bagi pemerintah daerah untuk memberikan dukungan yang lebih konkret terhadap pengembangan sektor teknologi di Jawa Timur.",
     "location": "Malang",
@@ -206,7 +272,7 @@
     "registration_link": "https://link.tiptip.id/x03J6caYjng",
     "registration_sponsorship": "https://s.id/sponsorship-jdd",
     "registration_tagline": "",
-    "speakers": "12",
+    "speakers": "15+",
     "tagline": ""
   },
   "gallery": [
@@ -235,11 +301,75 @@
       "name": "Iqbal Maulana",
       "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fiqbal.jpeg?alt=media&token=b3acb439-873f-42e7-99ca-6e54d45f46ed",
       "title": "Product Engineer at Zero One Group"
+    },
+    {
+      "name": "Joshua Manuputty",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fjoshua.jpg?alt=media&token=a7215d76-616d-4c0b-abad-a07451d8e7fc",
+      "title": "Frontend Engineer at Eclipse Fi"
+    },
+    {
+      "name": "Juniardy Setiowidayoga",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fjunns.jpg?alt=media&token=98c7646a-0c8e-4239-a5bb-ad8c4b8ce99a",
+      "title": "Founder of Indive Web3 Community"
+    },
+    {
+      "name": "Danny Dwi Cahyono",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2FIMG_7901%202%20-%20Danny%20Dwi%20Cahyono-2.jpg?alt=media&token=19facb63-849c-4793-b4ad-650af2ecb028",
+      "title": "Software Engineer at Hijra"
+    },
+    {
+      "name": "Fathur Rohim",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Foim-jdd-3%20-%20Oim%20_%20Fathur%20Rohim-2.jpg?alt=media&token=0d2ad15f-59e1-4484-9873-e20fdf9f45df",
+      "title": "QA Engineer at PVG"
+    },
+    {
+      "name": "Christian Sri Kusuma",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2FChristian-Aditya.jpg?alt=media&token=da0d88df-5659-4767-b1de-cca171afa554",
+      "title": "Lecturer at Informatics Department UMM"
+    },
+    {
+      "name": "Ronald Dimas Yuwandika",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fronald.jpg?alt=media&token=9a66a1c9-62d8-42ca-9cd1-076db9ef4ad1",
+      "title": "Senior Infrastructure Engineer at Ruangguru"
+    },
+    {
+      "name": "Wahyu Arbianda Y.P.",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Foyek.jpg?alt=media&token=d908684d-7113-496b-b953-8518eb50a232",
+      "title": "Tech Lead IT Division at RSUD dr. R. Soedarsono"
+    },
+    {
+      "name": "Afrizal F.A",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fafrizal.jpg?alt=media&token=cc70a331-7d80-4f72-871b-defa6f01b58a",
+      "title": "Lead Malang Hacker Link"
+    },
+    {
+      "name": "Regita Putri Permata",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fregita.jpg?alt=media&token=6b965b82-dbcd-461c-9e8e-1a1e2f221ed5",
+      "title": "Lecturer at Sains Data Department Tel-U Surabaya"
+    },
+    {
+      "name": "Fahmi Syaifudin",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Ffahmi.jpg?alt=media&token=6b787a18-f5e6-497f-aa20-fd0575dc1565",
+      "title": "Lead LamonganDev"
+    },
+    {
+      "name": "Musa Al Farid",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fmusa.jpg?alt=media&token=9c44c817-34f4-402b-8b87-b59bbe88ed88",
+      "title": "Lead Community SurabayaDev"
+    },
+    {
+      "name": "Sawitry Dyah Kusuma",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fsawitry.jpg?alt=media&token=fb06f29a-d951-4dcc-91c5-eb4eb663f7ad",
+      "title": "Community Manager at SurabayaDev"
     }
   ],
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/jatimdevday",
+    "whatsapp": "https://wa.me/6282228300495"
+  },
   "speaker": [
     {
-      "name": "Doni Rubiagtra",
+      "name": "Doni Rubiagatra",
       "photo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/speaker%2Fdoni_rubiagatra.jpg?alt=media&token=fc1134b9-bba0-4cce-bb61-84b3177cafec",
       "title": "Partner & VP of Engineering at Zero One Group"
     },
@@ -256,20 +386,32 @@
   ],
   "sponsor": [
     {
-      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum-2.png?alt=media&token=2e2d7064-2113-4189-b392-ac8306077e3d",
-      "name": "Tech Innovators"
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Fimage.png?alt=media&token=43d207b4-6b77-4f6b-ae99-6c17a69fe2b8",
+      "name": "Only Office"
     },
     {
-      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum-3.png?alt=media&token=35f25bd0-da66-4cee-aaae-abb57e5725ea",
-      "name": "CodeCraft Labs"
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Fimage-2.png?alt=media&token=6d37ac8a-c2e7-42e0-85a9-7b742cadf9aa",
+      "name": "Inixindo Surabaya"
     },
     {
-      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum-4.png?alt=media&token=0f611817-e8df-4885-866d-b8a842fd75b3",
-      "name": "AI Pioneers"
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2FZeroOneGroup_Black_500x500_Padded.png?alt=media&token=e973fb91-9ee2-4621-a60f-a3abff5564ac",
+      "name": "Zero One Group"
     },
     {
-      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Flogo-ipsum.png?alt=media&token=3a966c7a-fd6f-4a48-b335-afe0976a12ec",
-      "name": "Cloud Solutions"
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Fjetbrains.png?alt=media&token=60fa25b0-e26a-455f-9180-2e5ee85e0b71",
+      "name": "Jetbrains"
+    },
+    {
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2FLOGO%20JH%20ORANGE%20BLACK-2.png?alt=media&token=6b6dd3e1-b776-4281-acf9-9d478a9c9fa7",
+      "name": "Jagoan Hosting"
+    },
+    {
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2Fbiznet-gio-l-min.jpg?alt=media&token=c34af21d-e28e-4be2-a2cf-9ec3ab7e9e1c",
+      "name": "Biznet Giocloud"
+    },
+    {
+      "logo": "https://firebasestorage.googleapis.com/v0/b/jdd2024-b625b.appspot.com/o/sponsor%2FLogoBiznet.png?alt=media&token=ed1b3769-296e-49fb-8278-f2bcf072073c",
+      "name": "Biznet"
     }
   ],
   "ticket": [
@@ -277,129 +419,73 @@
       "features": [
         {
           "included": true,
-          "name": "Akses semua sesi"
+          "name": "Snack"
         },
         {
           "included": true,
-          "name": "Sertifikat kehadiran"
+          "name": "Lunch"
+        },
+        {
+          "included": true,
+          "name": "e-Certificate"
+        },
+        {
+          "included": true,
+          "name": "Sticker Pack Special JDD"
+        },
+        {
+          "included": true,
+          "name": "Gift menarik"
         },
         {
           "included": false,
-          "name": "Makan siang"
+          "name": "Kaos"
         },
         {
           "included": false,
-          "name": "Networking session"
-        },
-        {
-          "included": false,
-          "name": "Workshop eksklusif"
-        },
-        {
-          "included": false,
-          "name": "Merchandise eksklusif"
+          "name": "Totebag Special JDD"
         }
       ],
       "highlighted": false,
       "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
-      "price": "Rp25.000",
-      "title": "Early Bird"
-    },
-    {
-      "features": [
-        {
-          "included": true,
-          "name": "Akses semua sesi"
-        },
-        {
-          "included": true,
-          "name": "Sertifikat kehadiran"
-        },
-        {
-          "included": true,
-          "name": "Makan siang"
-        },
-        {
-          "included": false,
-          "name": "Networking session"
-        },
-        {
-          "included": false,
-          "name": "Workshop eksklusif"
-        },
-        {
-          "included": false,
-          "name": "Merchandise eksklusif"
-        }
-      ],
-      "highlighted": false,
-      "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
-      "price": "Rp35.000",
+      "price": "Rp50.000",
       "title": "Reguler"
     },
     {
       "features": [
         {
           "included": true,
-          "name": "Akses semua sesi"
+          "name": "Snack"
         },
         {
           "included": true,
-          "name": "Sertifikat kehadiran"
+          "name": "Lunch"
         },
         {
           "included": true,
-          "name": "Makan siang"
+          "name": "e-Certificate"
         },
         {
           "included": true,
-          "name": "Networking session"
+          "name": "Sticker Pack Special JDD"
         },
         {
           "included": true,
-          "name": "Workshop eksklusif"
+          "name": "Gift menarik"
         },
         {
           "included": true,
-          "name": "Merchandise eksklusif"
-        }
-      ],
-      "highlighted": true,
-      "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
-      "price": "Rp150.000",
-      "title": "Bundling"
-    },
-    {
-      "features": [
-        {
-          "included": true,
-          "name": "Akses semua sesi"
+          "name": "Kaos (dengan ukuran sesuai permintaan)"
         },
         {
           "included": true,
-          "name": "Sertifikat kehadiran"
-        },
-        {
-          "included": true,
-          "name": "Makan siang"
-        },
-        {
-          "included": true,
-          "name": "Networking session"
-        },
-        {
-          "included": false,
-          "name": "Workshop eksklusif"
-        },
-        {
-          "included": false,
-          "name": "Merchandise eksklusif"
+          "name": "Totebag Special JDD"
         }
       ],
       "highlighted": false,
       "link": "https://tiptip.id/event/ee9268d4-a691-4013-827b-e622cf8fd35f?show_options=true",
-      "price": "Rp50.000",
-      "title": "Last Call"
+      "price": "Rp150.000",
+      "title": "Bundling"
     }
   ]
 }

@@ -43,7 +43,9 @@ const Agenda = async ({ content }: { content?: Content }) => {
                 <td className="px-3 py-2 md:py-3.5 font-semibold align-top">
                   {item.speaker}
                 </td>
-                <td className="px-3 py-2 md:py-3.5 align-top">{item.lokasi}</td>
+                <td className="px-3 py-2 md:py-3.5 align-top">
+                  {item.lokasi || "-"}
+                </td>
               </tr>
             ))}
           </tbody>

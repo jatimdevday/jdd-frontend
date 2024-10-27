@@ -22,10 +22,10 @@ const Header = ({ content }: { content?: Content }) => {
     //   label: "Roadshow",
     //   key: "roadshow",
     // },
-    // {
-    //   label: "Agenda",
-    //   key: "agenda",
-    // },
+    {
+      label: "Agenda",
+      key: "agenda",
+    },
     {
       label: "Gallery JDD",
       key: "gallery",
