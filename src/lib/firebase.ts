@@ -12,7 +12,7 @@ import {
   Speakers,
   ThrowbackEvent,
   Sponsors,
-  SocialMedia
+  SocialMedia,
 } from "./schema";
 
 const firebaseConfig = {
@@ -126,7 +126,8 @@ export async function getAgendas(): Promise<Agendas | Error> {
     const dbRef = ref(getDatabase());
     const data = await get(child(dbRef, "agenda"));
     if (data.exists()) {
-      return data.val() as Agendas;
+      const agenda = data.val() as Agendas;
+      return agenda.sort((a, b) => a.seq - b.seq);
     } else {
       throw new Error("Event data not found");
     }

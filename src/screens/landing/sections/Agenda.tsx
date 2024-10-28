@@ -13,7 +13,8 @@ const Agenda = async ({ content }: { content?: Content }) => {
         <table className="w-full mt-6 sm:mt-8 text-white rounded-md overflow-hidden">
           <thead className="sm:table-header-group hidden">
             <tr className="bg-secondary">
-              <th className="px-3 py-2.5 text-left font-semibold">Materi</th>
+              <th className="px-3 py-2.5 text-left font-semibold">Waktu</th>
+              <th className="px-3 py-2.5 text-left font-semibold">Agenda</th>
               <th className="px-3 py-2.5 text-left font-semibold">Speaker</th>
               <th className="px-3 py-2.5 text-left font-semibold">Lokasi</th>
             </tr>
@@ -27,6 +28,7 @@ const Agenda = async ({ content }: { content?: Content }) => {
                   index % 2 === 0 ? "bg-[#0D1521]" : "bg-[#0e1826]"
                 )}
               >
+                <td className="px-3 py-2 md:py-3.5 align-top">{item.time}</td>
                 <td className="px-3 py-2 md:py-3.5">
                   <p className="mb-4">{item.title}</p>
                   <div className="flex flex-wrap gap-2">
