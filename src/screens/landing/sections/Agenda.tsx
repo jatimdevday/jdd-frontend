@@ -30,7 +30,7 @@ const Agenda = async ({ content }: { content?: Content }) => {
                 <td className="px-3 py-2 md:py-3.5">
                   <p className="mb-4">{item.title}</p>
                   <div className="flex flex-wrap gap-2">
-                    {item.tags.map((tag, idx) => (
+                    {item.tags?.map((tag, idx) => (
                       <span
                         key={idx}
                         className="bg-secondary text-xs px-2 py-1 rounded"
