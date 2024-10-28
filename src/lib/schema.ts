@@ -57,10 +57,12 @@ export type Events = {
 }[];
 
 export type Agendas = {
+  time: string;
   title: string;
-  speaker: string;
-  lokasi: string;
-  tags: string[];
+  speaker?: string;
+  lokasi?: string;
+  tags?: string[];
+  seq: number;
 }[];
 
 export type Tickets = {
@@ -77,6 +79,6 @@ export type Sponsors = {
 }[];
 
 export type SocialMedia = {
-  instagram: string
-  whatsapp: string
-}
+  instagram: string;
+  whatsapp: string;
+};
