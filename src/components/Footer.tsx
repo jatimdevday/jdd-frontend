@@ -39,6 +39,17 @@ const Footer = async () => {
             akademisi,pemerintah, dan industri teknologi di Jawa Timur, guna
             mendorong inovasi dan pertumbuhan sektor digital.
           </p>
+
+          <Link href="/faq" className="block hover:text-gray-300">
+            FAQ (Frequently Asked Questions)
+          </Link>
+          <Link href="/terms" className="block hover:text-gray-300">
+            Term of Service
+          </Link>
+          <Link href="/refund" className="block hover:text-gray-300">
+            Refund Policy
+          </Link>
+
           <div className="flex gap-4">
             <Link target="_blank" href={socialMedia.instagram}>
               <Instagram />

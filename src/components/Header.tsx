@@ -53,17 +53,19 @@ const Header = ({ content }: { content?: Content }) => {
     >
       <div className="container mx-auto py-3 md:py-5">
         <div className="flex justify-between items-center">
-          <div className="relative h-10 md:h-12 w-10 md:w-12 z-20">
-            <Image
-              quality={100}
-              src="/jdd.png"
-              alt=""
-              fill
-              style={{
-                objectFit: "contain",
-              }}
-            />
-          </div>
+          <Link href="/">
+            <div className="relative h-10 md:h-12 w-10 md:w-12 z-20">
+              <Image
+                quality={100}
+                src="/jdd.png"
+                alt=""
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+          </Link>
           <div className="block md:hidden z-20">
             {isMenuOpen ? (
               <XMark className="size-6 text-white" onClick={toggleMenu} />
