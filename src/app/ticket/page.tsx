@@ -1,16 +1,16 @@
 import Layout from "@/components/Layout";
 import { getContent } from "@/lib/firebase";
 import { Content } from "@/lib/schema";
-import FaqScreen from "@/screens/faq/Faq";
-import LandingScreen from "@/screens/landing/LandingScreen";
+import TicketScreen from "@/screens/ticket/Ticket";
 
-const Page = async () => {
+const TicketPage = async () => {
   const content = (await getContent()) as Content;
+
   return (
     <Layout content={content}>
-      <LandingScreen content={content} />
+      <TicketScreen content={content} />
     </Layout>
   );
 };
 
-export default Page;
+export default TicketPage;
