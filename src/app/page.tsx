@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import { getContent } from "@/lib/firebase";
 import { Content } from "@/lib/schema";
-import FaqScreen from "@/screens/faq/Faq";
 import LandingScreen from "@/screens/landing/LandingScreen";
 
 const Page = async () => {
