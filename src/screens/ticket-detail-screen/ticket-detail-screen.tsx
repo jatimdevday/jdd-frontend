@@ -9,7 +9,6 @@ import PageHeader from "@/components/page-header";
 import HelpFooter from "@/components/help-footer";
 import UserIdBadge from "@/components/user-id-badge";
 import SkeletonLoader from "@/components/skeleton-loader";
-import Breadcrumb from "@/components/breadcrumb";
 
 interface TicketDetailScreenProps {
   ticketId?: string;
@@ -143,16 +142,6 @@ const TicketDetailScreen: React.FC<TicketDetailScreenProps> = ({
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div className="max-w-4xl mx-auto px-4 py-8">
-          {/* Breadcrumb */}
-          <Breadcrumb
-            items={[
-              { label: "Beranda", href: "/", icon: "🏠" },
-              { label: "Tiket", href: "/ticket", icon: "🎫" },
-              { label: "Tiket Detail", icon: "📋" },
-            ]}
-            className="mb-6"
-          />
-
           <EmptyState
             title="Tiket Tidak Ditemukan"
             description={
@@ -185,16 +174,6 @@ const TicketDetailScreen: React.FC<TicketDetailScreenProps> = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Beranda", href: "/", icon: "🏠" },
-            { label: "Tiket", href: "/ticket", icon: "🎫" },
-            { label: "Detail Tiket", icon: "📋" },
-          ]}
-          className="mb-6"
-        />
-
         {/* Header */}
         <PageHeader
           title="Detail Tiket"
