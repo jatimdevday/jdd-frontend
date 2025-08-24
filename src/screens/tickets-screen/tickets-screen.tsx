@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { TicketType, TicketHolder } from "@/types/event";
 import { TicketSelection } from "@/components/ticket-selection";
 import { TicketHolderForm } from "@/components/ticket-holder-form";
 import { OrderSummary } from "@/components/order-summary";
-import { Button } from "@/components/ui/button";
 
 // Data tiket yang tersedia sesuai dengan busya.id
 const availableTicketTypes: TicketType[] = [
@@ -40,31 +39,72 @@ const TicketsScreen = () => {
   // Hitung total tiket yang dipilih
   const totalTickets = quantity;
 
+  // Sync ticketHolders dengan quantity
+  useEffect(() => {
+    if (selectedTicketType && quantity > 0) {
+      setTicketHolders((currentHolders) => {
+        if (quantity !== currentHolders.length) {
+          if (quantity > currentHolders.length) {
+            // Tambah holders
+            const newHolders = [...currentHolders];
+            for (let i = currentHolders.length; i < quantity; i++) {
+              newHolders.push({
+                id: `holder-${Date.now()}-${i}-${Math.random()
+                  .toString(36)
+                  .substr(2, 9)}`,
+                fullName: "",
+                email: "",
+                community: "",
+                occupation: undefined,
+                institution: "",
+                interests: "",
+                informationSource: undefined,
+              });
+            }
+            return newHolders;
+          } else {
+            // Kurangi holders
+            return currentHolders.slice(0, quantity);
+          }
+        }
+        return currentHolders;
+      });
+    } else if (quantity === 0) {
+      setTicketHolders([]);
+    }
+  }, [quantity, selectedTicketType]);
+
   // Update tipe tiket yang dipilih
   const handleTicketTypeChange = (ticketId: string) => {
     setSelectedTicketType(ticketId);
-    // Reset quantity dan form pemegang tiket
-    setQuantity(0);
-    setTicketHolders([]);
+
+    if (ticketId === "") {
+      // Reset semua jika ticketId kosong
+      setQuantity(0);
+      setTicketHolders([]);
+    } else {
+      // Mulai dengan 1 tiket dan 1 form ketika tiket dipilih
+      setQuantity(1);
+
+      // Langsung buat 1 form pemegang tiket
+      const initialHolder: TicketHolder = {
+        id: `holder-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        fullName: "",
+        email: "",
+        community: "",
+        occupation: undefined,
+        institution: "",
+        interests: "",
+        informationSource: undefined,
+      };
+      setTicketHolders([initialHolder]);
+    }
   };
 
   // Update jumlah tiket
   const handleQuantityChange = (newQuantity: number) => {
     setQuantity(newQuantity);
-
-    if (newQuantity === 0) {
-      // Jika quantity = 0, hapus semua form
-      setTicketHolders([]);
-    } else if (newQuantity > ticketHolders.length) {
-      // Tambah form jika tiket bertambah
-      const formsToAdd = newQuantity - ticketHolders.length;
-      for (let i = 0; i < formsToAdd; i++) {
-        addTicketHolder();
-      }
-    } else if (newQuantity < ticketHolders.length) {
-      // Kurangi form jika tiket berkurang
-      setTicketHolders((prev) => prev.slice(0, newQuantity));
-    }
+    // Logic untuk sync ticketHolders sudah dipindah ke useEffect
   };
 
   // Update data pemegang tiket
@@ -74,48 +114,14 @@ const TicketsScreen = () => {
     setTicketHolders(newHolders);
   };
 
-  // Tambah pemegang tiket baru
-  const addTicketHolder = () => {
-    const newHolder: TicketHolder = {
-      id: `holder-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      fullName: "",
-      email: "",
-      community: "",
-      occupation: undefined,
-      institution: "",
-      interests: "",
-      informationSource: undefined,
-    };
-
-    if (ticketHolders.length === 0) {
-      setTicketHolders([newHolder]);
-    } else {
-      setTicketHolders([...ticketHolders, newHolder]);
-    }
-  };
-
   // Hapus pemegang tiket
   const removeTicketHolder = (index: number) => {
     const newHolders = ticketHolders.filter((_, i) => i !== index);
     setTicketHolders(newHolders);
 
-    // Update quantity jika form dihapus
-    if (newHolders.length < quantity) {
-      setQuantity(newHolders.length);
-    }
+    // Update quantity agar sinkron dengan jumlah form
+    setQuantity(newHolders.length);
   };
-
-  // Validasi form
-  const isFormValid = useMemo(() => {
-    if (totalTickets === 0 || !selectedTicketType) return false;
-
-    return ticketHolders.every(
-      (holder) =>
-        holder.fullName.trim() !== "" &&
-        holder.email.trim() !== "" &&
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(holder.email)
-    );
-  }, [ticketHolders, totalTickets, selectedTicketType]);
 
   // Handle pembayaran - reset form setelah membuka payment gateway
   const handleProceedToPayment = () => {
