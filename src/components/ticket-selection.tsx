@@ -48,11 +48,23 @@ export function TicketSelection({
 
             <div className="flex items-center space-x-4">
               {selectedTicketType === ticket.id && (
-                <TicketQuantitySelector
-                  value={quantity}
-                  onChange={onQuantityChange}
-                  max={10}
-                />
+                <>
+                  <TicketQuantitySelector
+                    value={quantity}
+                    onChange={onQuantityChange}
+                    min={1}
+                    max={10}
+                  />
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onTicketTypeChange("");
+                    }}
+                    className="text-sm text-gray-500 hover:text-red-600 underline"
+                  >
+                    Reset
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -70,7 +82,8 @@ export function TicketSelection({
       {!selectedTicketType && (
         <div className="mt-6 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-[0_8px_25px_rgba(245,158,11,0.1)]">
           <p className="text-sm text-amber-800 font-medium">
-            <strong>💡 Panduan:</strong> Pilih salah satu tipe tiket di atas untuk melanjutkan
+            <strong>💡 Panduan:</strong> Pilih salah satu tipe tiket di atas
+            untuk melanjutkan
           </p>
         </div>
       )}
