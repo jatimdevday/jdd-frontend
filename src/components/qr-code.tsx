@@ -118,9 +118,6 @@ const QRCode: React.FC<QRCodeProps> = ({
           className="rounded"
           style={{ width: size, height: size }}
         />
-        {clickable && (
-          <p className="text-xs text-gray-500 mt-1">Klik untuk zoom</p>
-        )}
       </div>
 
       {/* QR Code Modal */}
