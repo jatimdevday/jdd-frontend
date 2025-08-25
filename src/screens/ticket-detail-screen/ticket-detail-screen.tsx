@@ -10,13 +10,11 @@ import HelpFooter from "@/components/help-footer";
 import UserIdBadge from "@/components/user-id-badge";
 import SkeletonLoader from "@/components/skeleton-loader";
 
-interface TicketDetailScreenProps {
-  ticketId?: string;
+interface Props {
+  eventId?: string;
 }
 
-const TicketDetailScreen: React.FC<TicketDetailScreenProps> = ({
-  ticketId,
-}) => {
+const TicketDetailScreen = ({ eventId }: Props) => {
   const [ticket, setTicket] = useState<PurchasedTicket | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -74,8 +72,8 @@ const TicketDetailScreen: React.FC<TicketDetailScreenProps> = ({
 
     // Simulate API call
     setTimeout(() => {
-      if (ticketId && mockTickets[ticketId]) {
-        setTicket(mockTickets[ticketId]);
+      if (eventId && mockTickets[eventId]) {
+        setTicket(mockTickets[eventId]);
         setError(null);
       } else {
         setError("Tiket tidak ditemukan");
@@ -83,7 +81,7 @@ const TicketDetailScreen: React.FC<TicketDetailScreenProps> = ({
       }
       setLoading(false);
     }, 1000);
-  }, [ticketId]);
+  }, [eventId]);
 
   const handlePrintTicket = (ticket: PurchasedTicket) => {
     // Implementasi cetak tiket ke PDF

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import { MinusIcon, PlusIcon } from "lucide-react";
 
 interface TicketQuantitySelectorProps {
   value: number;
@@ -33,31 +34,25 @@ export function TicketQuantitySelector({
   };
 
   return (
-    <div className="flex items-center space-x-3">
+    <div className="flex items-center">
       <Button
-        variant="outline"
         size="sm"
         onClick={handleDecrement}
         disabled={disabled || value <= min}
-        className="h-10 w-10 p-0 rounded-lg border-2 hover:border-blue-500 hover:bg-blue-50 transition-all cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
-        type="button"
       >
-        <span className="text-xl font-bold text-gray-700">−</span>
+        <MinusIcon />
       </Button>
 
-      <span className="min-w-[3rem] text-center text-xl font-bold text-gray-900">
+      <span className="min-w-[3rem] text-center text-lg font-bold text-gray-900">
         {value}
       </span>
 
       <Button
-        variant="outline"
         size="sm"
         onClick={handleIncrement}
         disabled={disabled || value >= max}
-        className="h-10 w-10 p-0 rounded-lg border-2 hover:border-blue-500 hover:bg-blue-50 transition-all cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
-        type="button"
       >
-        <span className="text-xl font-bold text-gray-700">+</span>
+        <PlusIcon />
       </Button>
     </div>
   );

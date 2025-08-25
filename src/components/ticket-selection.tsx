@@ -1,9 +1,10 @@
 import React from "react";
-import { TicketType } from "@/types/event";
 import { TicketQuantitySelector } from "./ticket-quantity-selector";
+import { Button } from "./ui/button";
+import { ITicket } from "@/types/ticket";
 
 interface TicketSelectionProps {
-  ticketTypes: TicketType[];
+  ticketTypes: ITicket[];
   selectedTicketType: string;
   quantity: number;
   onTicketTypeChange: (ticketId: string) => void;
@@ -18,72 +19,75 @@ export function TicketSelection({
   onQuantityChange,
 }: TicketSelectionProps) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
-      <h2 className="text-2xl font-bold text-gray-900">Pilih Tiket</h2>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+      <h2 className="text-lg font-semibold text-gray-900 mb-4">Pilih Tiket</h2>
 
-      <div className="space-y-4">
-        {ticketTypes.map((ticket) => (
-          <div
-            key={ticket.id}
-            className={`flex flex-col sm:flex-row sm:items-center justify-between p-6 border-2 rounded-2xl transition-all duration-300 cursor-pointer ${
-              selectedTicketType === ticket.id
-                ? "border-blue-500 bg-gradient-to-r from-blue-50 to-blue-100 shadow-[0_20px_40px_rgba(59,130,246,0.15)] scale-[1.02]"
-                : "border-gray-200 hover:border-blue-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:scale-[1.01] bg-gradient-to-r from-gray-50 to-white"
-            }`}
-            onClick={() => onTicketTypeChange(ticket.id)}
-          >
-            <div className="flex-1 mb-4 sm:mb-0">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {ticket.name}
-              </h3>
-              {ticket.description && (
-                <p className="text-gray-600 text-base mb-3 leading-relaxed">
-                  {ticket.description}
-                </p>
-              )}
-              <p className="text-3xl font-bold text-blue-600">
-                Rp {ticket.price.toLocaleString()}
-              </p>
-            </div>
+      <div className="space-y-3">
+        {ticketTypes.map((ticket) => {
+          const isAvailable = ticket.quota - ticket.sold > 0;
+          const isExpired = new Date(ticket.end_date) < new Date();
+          const canSelect = isAvailable && !isExpired;
 
-            <div className="flex items-center space-x-4">
-              {selectedTicketType === ticket.id && (
-                <>
+          return (
+            <div
+              key={ticket.id}
+              className={`border rounded-lg p-4 transition-all duration-200 ${
+                !canSelect
+                  ? "border-gray-200 bg-gray-50 opacity-60 cursor-not-allowed"
+                  : selectedTicketType === ticket.id
+                  ? "border-blue-400 bg-blue-50 cursor-pointer"
+                  : "border-gray-200 hover:border-gray-300 bg-white cursor-pointer"
+              }`}
+              onClick={() => canSelect && onTicketTypeChange(ticket.id)}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-7">
+                <div className="flex-1">
+                  <h3 className="text-base font-semibold text-gray-900">
+                    {ticket.name}
+                  </h3>
+
+                  <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+                    <span>
+                      Tersisa: {ticket.quota - ticket.sold}/{ticket.quota}
+                    </span>
+                    {!canSelect && (
+                      <span className="text-red-600 font-medium">
+                        {!isAvailable ? "Habis" : "Berakhir"}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {selectedTicketType === ticket.id && canSelect && (
                   <TicketQuantitySelector
                     value={quantity}
                     onChange={onQuantityChange}
                     min={1}
-                    max={10}
+                    max={Math.min(10, ticket.quota - ticket.sold)}
                   />
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onTicketTypeChange("");
-                    }}
-                    className="text-sm text-gray-500 hover:text-red-600 underline"
-                  >
-                    Reset
-                  </button>
-                </>
-              )}
+                )}
+
+                <p className="text-lg font-bold text-blue-600">
+                  Rp {parseFloat(ticket.price).toLocaleString("id-ID")}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {ticketTypes.length === 0 && (
-        <div className="text-center py-8">
-          <p className="text-gray-500">
+        <div className="text-center py-6">
+          <p className="text-sm text-gray-500">
             Tidak ada tiket yang tersedia saat ini.
           </p>
         </div>
       )}
 
-      {!selectedTicketType && (
-        <div className="mt-6 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-[0_8px_25px_rgba(245,158,11,0.1)]">
-          <p className="text-sm text-amber-800 font-medium">
-            <strong>💡 Panduan:</strong> Pilih salah satu tipe tiket di atas
-            untuk melanjutkan
+      {!selectedTicketType && ticketTypes.length > 0 && (
+        <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
+          <p className="text-xs text-amber-700">
+            💡 Pilih salah satu tipe tiket di atas untuk melanjutkan
           </p>
         </div>
       )}

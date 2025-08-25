@@ -1,64 +1,35 @@
-export interface Event {
-  id: string;
-  name: string;
-  description?: string;
-  date: string;
-  location?: string;
-  price?: number;
-  availableTickets?: number;
-}
+import { IBase } from "./base";
+import { IForm } from "./form";
+import { ITicket } from "./ticket";
 
-export interface TicketType {
+export type TEvent = {
   id: string;
-  name: string;
-  price: number;
-  description?: string;
-}
+  title: string;
+  description: string;
+  start_date: string;
+  end_date: string;
+  images: string[];
+  venue_name: string;
+  venue_address: string;
+  created_at: string;
+  updated_at: string;
+  forms: IForm[];
+  tickets: ITicket[];
+};
 
+// For backward compatibility and to fix type issues
 export interface TicketHolder {
   id: string;
   fullName: string;
   email: string;
   community?: string;
-  occupation?:
-    | "Pelajar"
-    | "Mahasiswa"
-    | "Karyawan Swasta"
-    | "Wiraswasta"
-    | "Lainnya";
+  occupation?: string;
   institution?: string;
   interests?: string;
-  informationSource?:
-    | "Media Sosial"
-    | "Website"
-    | "Teman/Kolega"
-    | "Iklan"
-    | "Lainnya";
+  informationSource?: string;
   phoneNumber?: string;
   birthDate?: string;
+  [key: string]: any; // For dynamic form fields
 }
 
-export interface PaymentMethod {
-  id: string;
-  name: string;
-  icon: string;
-  description?: string;
-}
-
-export interface PurchasedTicket {
-  id: string;
-  eventId: string;
-  eventName: string;
-  eventDate: string;
-  eventLocation: string;
-  ticketCode: string;
-  ticketType: "regular" | "bundling";
-  ticketTypeName: string;
-  holderName: string;
-  purchaseDate: string;
-  status: "active" | "used" | "pending" | "expired";
-  qrCode?: string;
-  price: number;
-}
-
-export type TicketStatus = "active" | "used" | "pending" | "expired";
+export type TEvents = Omit<TEvent, "forms" | "tickets">;
