@@ -33,6 +33,7 @@ const createTicketHolderSchema = (dynamicForms: IForm[] = []) => {
       .string()
       .min(1, "Email wajib diisi")
       .email("Format email tidak valid"),
+    phoneNumber: z.string().min(1, "Nomor telepon wajib diisi"),
   };
 
   // Add dynamic form fields to schema
@@ -208,6 +209,28 @@ export function TicketHolderForm({
                         <Input
                           type="email"
                           placeholder="email@contoh.com"
+                          {...field}
+                          className="h-9"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {/* Field Phone Number */}
+                <FormField
+                  control={form.control}
+                  name="phoneNumber"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium">
+                        Nomor Telepon *
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="tel"
+                          placeholder="08123456789"
                           {...field}
                           className="h-9"
                         />

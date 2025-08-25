@@ -85,6 +85,7 @@ const EventDetailScreen = ({ data }: Props) => {
                 .substr(2, 9)}`,
               fullName: "",
               email: "",
+              phoneNumber: "",
               community: undefined,
               occupation: undefined,
               institution: undefined,
